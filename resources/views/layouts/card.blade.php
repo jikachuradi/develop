@@ -22,29 +22,24 @@
         <!-- Styles -->
         {{-- Laravel標準で用意されているCSSを読み込み --}}
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-        {{-- CSSを読み込み --}}
+        {{-- card.scssを読み込み --}}
         <link href="{{ secure_asset('css/card.css') }}" rel="stylesheet">
     </head>
+    
     <body>
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバー--}}
-            <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
+            <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <div class="container">
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
-
-                        </ul>
-
+                        
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
+
                         <!-- Authentication Links -->
                         {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
                         @guest
@@ -53,10 +48,12 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->name }} {{ __('’s MENU')}} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">TOP</a>
+                                    <a class="dropdown-item" href="#">登録画面</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -75,9 +72,9 @@
             </nav>
 
             <main class="py-4">
-
                 @yield('content')
             </main>
         </div>
     </body>
+    <footer class="footer">©️2020 Birthday & Anniversary List</footer>
 </html>
