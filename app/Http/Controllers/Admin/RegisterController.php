@@ -41,7 +41,7 @@ public function index(Request $request)
   public function edit(Request $request)
   {
       // Register Modelからデータを取得する
-      $register = register::find($request->id);
+      $register = Register::find($request->id);
       if (empty($register)) {
         abort(404);    
       }
@@ -58,7 +58,6 @@ public function index(Request $request)
       // 送信されてきたフォームデータを格納する
       $register_form = $request->all();
       unset($register_form['_token']);
-
       // 該当するデータを上書きして保存する
       $register->fill($register_form)->save();
       return redirect('admin/register/');

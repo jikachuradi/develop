@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 
-@section('title', 'Register')
+@section('title', 'リストの編集')
 
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>プロフィール編集画面</h2>
+                <h2>リスト編集</h2>
                                 <form action="{{ action('Admin\RegisterController@update') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                     <ul>
@@ -64,8 +64,10 @@
                             <textarea class="form-control" name="memo" rows="20">{{$register_form->memo }}</textarea>
                         </div>
                     </div>
-                        {{ csrf_field() }}
-                   <input type="submit" class="btn btn-primary" value="更新">
+                    <div class="form-group row">
+                    <div class="col-md-10">
+                        <input type="hidden" name="id" value="{{ $register_form->id }}">                        {{ csrf_field() }}
+                   <input type="submit" class="btn btn-secondary" value="更新">
                     </div>
                 </div>
             </form>
