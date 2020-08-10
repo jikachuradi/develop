@@ -9,7 +9,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@yield('title')</title>
+        <title>List of Celebrations</title>
 
         <!-- Scripts -->
          {{-- Laravel標準で用意されているJavascriptを読み込み --}}
@@ -24,6 +24,37 @@
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         {{-- card.scssを読み込み --}}
         <link href="{{ secure_asset('css/card.css') }}" rel="stylesheet">
+        
+            <style>
+            .content {
+                margin-top: 150px;
+                text-align: center;
+            }
+
+            .title {
+                color: #636b6f;
+                font-size: 84px;
+            }
+
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .m-b-md {
+                margin-bottom: 150px;
+            }
+            
+            .footer{
+                margin-top: 200px;
+            }
+            
+            </style>
     </head>
     
     <body>
@@ -31,7 +62,9 @@
             {{-- 画面上部に表示するナビゲーションバー--}}
             <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <div class="container">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ __('List of Celebrations') }}
+                    </a>                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
@@ -51,9 +84,14 @@
                                     {{ Auth::user()->name }} {{ __('’s MENU')}} <span class="caret"></span>
                                 </a>
 
+
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">TOP</a>
-                                    <a class="dropdown-item" href="#">登録画面</a>
+                                    <a class="dropdown-item" href="{{url('/')}}">TOP</a>
+                                    <a class="dropdown-item" href="{{url('/admin/register/create')}}">リスト保存</a>
+                                    <a class="dropdown-item" href="#">リスト一覧</a>
+                                    <a class="dropdown-item" href="{{url('/admin/card/create')}}">カード作成</a>
+                                    <a class="dropdown-item" href="#">カード一覧</a>
+                                    <a class="dropdown-item" href="#">設定</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -65,16 +103,28 @@
                                     </form>
                                 </div>
                             </li>
-                            @endguest
                         </ul>
                     </div>
                 </div>
             </nav>
+                <div class="content">
+                <div class="title m-b-md">
+                List of Celebrations    
+                </div>
 
+                <div class="links">
+                    <a href="#">リスト保存</a>
+                    <a href="#">リスト一覧</a>
+                    <a href="#">カード作成</a>
+                    <a href="#">カード一覧</a>
+                    <a href="#">設定</a>
+                </div>
+                
+                @endguest
             <main class="py-4">
                 @yield('content')
             </main>
         </div>
     </body>
-    <footer class="footer">©️2020 Birthday & Anniversary List</footer>
+    <footer class="footer">©️2020  List of Celebrations </footer>
 </html>

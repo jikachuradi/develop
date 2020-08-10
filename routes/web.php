@@ -16,17 +16,22 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
-    //register
+    //register リスト
     Route::get('register/create', 'Admin\RegisterController@add');
-   //card
+    Route::post('register/create', 'Admin\RegisterController@create');
+    Route::get('register', 'Admin\RegisterController@index');
+    Route::get('register/edit', 'Admin\RegisterController@edit');
+    Route::post('register/edit', 'Admin\RegisterController@update');
+    Route::get('register/delete', 'Admin\RegisterController@delete');
+    //card　カード
     Route::get('card/create', 'Admin\CardController@add');
+    Route::post('card/create', 'Admin\CardController@create');
+    Route::get('card', 'Admin\CardController@index');
     Route::get('card/edit', 'Admin\CardController@edit');
+    Route::post('card/edit', 'Admin\CardController@update');
+    Route::get('card/delete', 'Admin\CardController@delete');
     
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 

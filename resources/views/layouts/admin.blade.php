@@ -30,6 +30,9 @@
             {{-- 画面上部に表示するナビゲーションバー--}}
             <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <div class="container">
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ __('List of Celebrations') }}
+                    </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -54,8 +57,12 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">TOP</a>
-                                    <a class="dropdown-item" href="#">カード登録画面</a>
+                                    <a class="dropdown-item" href="{{url('/')}}">TOP</a>
+                                    <a class="dropdown-item" href="{{url('/admin/register/create')}}">リスト保存</a>
+                                    <a class="dropdown-item" href="{{url('/admin/register')}}">リスト一覧</a>
+                                    <a class="dropdown-item" href="{{url('/admin/card/create')}}">カード作成</a>
+                                    <a class="dropdown-item" href="#">カード一覧</a>
+                                    <a class="dropdown-item" href="#">設定</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -78,5 +85,5 @@
             </main>
         </div>
     </body>
-    <footer class="footer">©️2020 Birthday & Anniversary List</footer>
+    <footer class="footer">©️2020 List of Celebrationst</footer>
 </html>

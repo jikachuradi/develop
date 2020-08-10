@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>カード登録画面</h2>
+                <h2>カード作成画面</h2>
             </div>
         </div>
     </div>
