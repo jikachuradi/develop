@@ -61,7 +61,6 @@ public function index(Request $request)
       return view('admin.template.edit', ['template_form' => $template]);
   }
 
-
   public function update(Request $request)
   {
       // Validationをかける
@@ -86,8 +85,7 @@ public function index(Request $request)
   
   
   
-  
-      public function card_create(Request $request){
+        public function card_create(Request $request){
         //publicディレクトリにある元画像を取得し、指定の大きさに切り取る
         $card_img = Image::make(public_path('image'))->crop(568, 440); //①
 
@@ -101,7 +99,8 @@ public function index(Request $request)
         }); //②
 
         //長めの文章を指定文字数で分割する
-
+        $max_len = 26;
+        $lines = self::mb_wordwrap($description, $max_len);
 
         //ディスクリプションを画像に表示させる
         $card_img ->text($lines, 284, 280, function($font) {
@@ -114,7 +113,16 @@ public function index(Request $request)
         //storageに保存する(適宜書き換えてください)
         $card_img->save(public_path() . '/image/' .'resize-bohe.jpg'); //③
     }
-
+    
+    public function mb_wordwrap($str, $width, $break=PHP_EOL )
+    {
+        $c = mb_strlen($str);
+        $arr = [];
+        for ($i=0; $i<=$c; $i+=$width) {
+            $arr[] = mb_substr($str, $i, $width);
+        }
+        return implode($break, $arr);
+    }
 
 
 

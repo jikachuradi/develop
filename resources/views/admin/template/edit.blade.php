@@ -16,12 +16,6 @@
                     </ul>
                 @endif
                     <div class="form-group row">
-                    <label class="col-md-2" for="text">テキスト</label>
-                    <div class="col-md-10">
-                        <input type="text" class="form-control" name="text" value="{{ old('text') }}">
-                    </div>
-                </div>
-                    <div class="form-group row">
                         <label class="col-md-2" for="image">画像</label>
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
@@ -30,17 +24,20 @@
                             </div>
                             <img src="{{ asset('storage/image/' . $template_form->image_path) }}">
                             <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="remove" value="true">画像を削除
-                                </label>
                             </div>
                         </div>
                     </div>
+                　　<div class="form-group row">
+                    <label class="col-md-2" for="text">テキスト</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" name="text" value="{{ old('text') }}">
+                    </div>
+                　　</div>
                     <div class="form-group row">
                     <div class="col-md-10">
                         <input type="hidden" name="id" value="{{ $template_form->id }}">
                     {{ csrf_field() }}
-                   <input type="submit" class="btn btn-secondary" value="更新">
+                   <input type="submit" class="btn btn-secondary" value="作成">
                     </div>
                 </div>
             </form>
