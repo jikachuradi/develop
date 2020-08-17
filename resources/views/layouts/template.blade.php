@@ -9,7 +9,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>List of Celebrations</title>
+        <title>@yield('title')</title>
 
         <!-- Scripts -->
          {{-- Laravel標準で用意されているJavascriptを読み込み --}}
@@ -22,16 +22,17 @@
         <!-- Styles -->
         {{-- Laravel標準で用意されているCSSを読み込み --}}
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-        {{-- CSSを読み込み --}}
-        <link href="{{ secure_asset('css/welcome.css') }}" rel="stylesheet">
+        {{-- template.scssを読み込み --}}
+        <link href="{{ secure_asset('css/template.css') }}" rel="stylesheet">
     </head>
+    
     <body>
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバー--}}
             <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ __('List of Celebrations') }}
+                    {{ __(' List of Celebrations') }}
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -53,15 +54,13 @@
                                     {{ Auth::user()->name }} {{ __('’s MENU')}} <span class="caret"></span>
                                 </a>
 
-
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{url('/')}}">TOP</a>
-                                    <a class="dropdown-item" href="{{url('/admin/register/create')}}">リスト登録</a>
+                                    <a class="dropdown-item" href="{{url('/admin/register/create')}}">リスト保存</a>
                                     <a class="dropdown-item" href="{{url('/admin/register')}}">リスト一覧</a>
-                                    <a class="dropdown-item" href="{{url('/admin/card/create')}}">カード作成</a>
+                                    <a class="dropdown-item" href="#">カード作成</a>
                                     <a class="dropdown-item" href="#">カード一覧</a>
-                                    <a class="dropdown-item" href="#">設定</a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="#">設定</a>                                    <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('messages.Logout') }}
@@ -72,28 +71,15 @@
                                     </form>
                                 </div>
                             </li>
+                            @endguest
                         </ul>
                     </div>
                 </div>
             </nav>
-                <div class="content">
-                <div class="title m-b-md">
-                List of Celebrations    
-                </div>
 
-                <div class="links">
-                    <a href="{{url('/admin/register/create')}}">リスト登録</a>
-                    <a href="{{url('/admin/register/')}}">リスト一覧</a>
-                    <a href="{{url('/admin/card/create')}}">カード作成</a>
-                    <a href="#">カード一覧</a>
-                    <a href="#">設定</a>
-                </div>
-                
-                @endguest
             <main class="py-4">
                 @yield('content')
             </main>
         </div>
     </body>
-    <footer class="footer">©️2020  List of Celebrations </footer>
 </html>

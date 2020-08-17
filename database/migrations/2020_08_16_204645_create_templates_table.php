@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRegistersTable extends Migration
+class CreateTemplatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateRegistersTable extends Migration
      */
     public function up()
     {
-        Schema::create('registers', function (Blueprint $table) {
+        Schema::create('templates', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name'); 
-            $table->date('birthday'); 
-            $table->date('anniversary'); 
-            $table->string('group'); 
-            $table->string('memo'); 
             $table->string('image_path')->nullable(); // 画像のパスを保存するカラム
             $table->timestamps();
         });
@@ -32,6 +27,6 @@ class CreateRegistersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('register');
+        Schema::dropIfExists('templates');
     }
 }

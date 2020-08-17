@@ -30,7 +30,17 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('card/edit', 'Admin\CardController@edit');
     Route::post('card/edit', 'Admin\CardController@update');
     Route::get('card/delete', 'Admin\CardController@delete');
+    //template
+    Route::get('template/create', 'Admin\TemplateController@add');
+    Route::post('template/create', 'Admin\TemplateController@create');
+    Route::get('template', 'Admin\TemplateController@index');
+    Route::get('template/edit', 'Admin\TemplateController@edit');
+    Route::post('template/edit', 'Admin\TemplateController@update');
     
+    Route::post('template/edit', 'Admin\TemplateController@card_create');
+    Route::post('template/edit', 'Admin\TemplateController@mb_wordwrape');
+    
+    Route::get('template/delete', 'Admin\TemplateController@delete');
 });
 
 Auth::routes();

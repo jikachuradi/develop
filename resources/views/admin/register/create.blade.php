@@ -3,14 +3,14 @@
 
 
 {{-- admin.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
-@section('title', 'リストの保存')
+@section('title', 'リスト登録')
 
 {{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>リストの保存</h2>
+                <h2>リスト登録</h2>
                 <form action="{{ action('Admin\RegisterController@create')}}"
                 method="post" enctype="multipart/form-data">
                     
@@ -68,6 +68,12 @@
                     <label class="col-md-2">メモ</label>
                     <div class="col-md-10">
                             <textarea class="form-control" name="memo" rows="20">{{ old('introduction') }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">写真</label>
+                        <div class="col-md-10">
+                            <input type="file" class="form-control-file" name="image">
                         </div>
                     </div>
                     {{ csrf_field() }}

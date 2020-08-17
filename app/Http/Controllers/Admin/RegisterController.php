@@ -19,10 +19,21 @@ class RegisterController extends Controller
     $this->validate($request, Register::$rules);
       $register= new Register;
       $form = $request->all();
+      
+      // フォームから画像が送信されてきたら、保存して、$register->image_path に画像のパスを保存する
+      if (isset($form['image'])) {
+        $path = $request->file('image')->store('public/image');
+        $register->image_path = basename($path);
+      } else {
+          $register->image_path = null;
+      }      
+      
       unset($form['_token']);
+      unset($form['image']);
+      
       $register->fill($form);
       $register->save();
-      return redirect('admin/register/create');
+      return redirect('admin/register/');
   }
 
 public function index(Request $request)
@@ -57,6 +68,14 @@ public function index(Request $request)
       $register = Register::find($request->id);
       // 送信されてきたフォームデータを格納する
       $register_form = $request->all();
+      if (isset($register_form['image'])) {
+        $path = $request->file('image')->store('public/image');
+        $register->image_path = basename($path);
+        unset($register_form['image']);
+      } elseif (isset($request->remove)) {
+        $register->image_path = null;
+        unset($register_form['remove']);
+      }      
       unset($register_form['_token']);
       // 該当するデータを上書きして保存する
       $register->fill($register_form)->save();

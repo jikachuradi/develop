@@ -1,17 +1,18 @@
-@extends('layouts.admin')
-@section('title', 'リスト一覧')
+@extends('layouts.template')
+
+@section('title', 'テンプレート一覧')
 
 @section('content')
      <div class="container">
          <div class="row">
-             <h2>リスト一覧</h2>
+             <h2>テンプレート一覧</h2>
          </div>
          <div class="row">
              <div class="col-md-4">
-                 <a href="{{ action('Admin\RegisterController@add') }}" role="button" class="btn btn-secondary">新規作成</a>
+                 <a href="{{ action('Admin\TemplateController@add') }}" role="button" class="btn btn-secondary">新規作成</a>
              </div>
              <div class="col-md-8">
-                 <form action="{{ action('Admin\RegisterController@index') }}"method="get">
+                 <form action="{{ action('Admin\TemplateController@index') }}"method="get">
                      <div class="form-group row">
                          <label class="col-md-2">名前</label>
                          <div class="col-md-8">
@@ -25,40 +26,31 @@
                  </form>
              </div>
          </div>
+         
          <div class="row">
-             <div class="admin-register col-md-12 mx-auto">
+             <div class="admin-template col-md-12 mx-auto">
                  <div class="row">
                  <table class="table">
                      <thead>
                          <tr>
                              <th width="5%"></th>
-                             <th width="15%">写真</th>
-                             <th width="15%">名前</th>
-                             <th width="12%">誕生日</th>
-                             <th width="12%">記念日</th>
-                             <th width="11%">グループ</th>
-                             <th width="20%">メモ</th>
+                             <th width="85%">テンプレート</th>
                              <th width="10%">編集／削除</th>
                          </tr>
                      </thead>
                      <tbody>
-                         @foreach($posts as $register)
+                         @foreach($posts as $template)
                          <tr>
-                             <th>{{ $register->id }}</th>
+                             <th>{{ $template->id }}</th>
                              <td>
-                             <img src="{{ asset('storage/image/' . $register->image_path) }}">
+                             <img src="{{ asset('storage/image/' . $template->image_path) }}">
                              </td>
-                              <td>{{ str_limit($register->name, 20)}}</td>
-                             <th>{{ $register->birthday }}</th>
-                             <th>{{ $register->anniversary }}</th>
-                             <th>{{ $register->group }}</th>
-                             <td>{{ str_limit($register->memo, 20)}}</td>
                             <td>
                                  <div>
-                                    <a href="{{ action('Admin\RegisterController@edit', ['id' => $register->id]) }}">編集</a>
-                                 </div>
+                                    <a href="{{ action('Admin\TemplateController@edit', ['id' => $template->id]) }}">編集</a>
+                                 </div> 
                                  <div>
-                                    <a href="{{ action('Admin\RegisterController@delete', ['id' => $register->id]) }}">削除</a>
+                                    <a href="{{ action('Admin\TemplateController@delete', ['id' => $template->id]) }}">削除</a>
                                 </div>
                              </td>
                         </tr>
