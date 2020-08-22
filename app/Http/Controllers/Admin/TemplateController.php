@@ -90,13 +90,11 @@ public function index(Request $request)
         logger($request);
         //画像を取得し、指定の大きさに切り取る
         $template_form = $request->all();
-        $path = $template_form->image_path;
-        $card_img = Image::make($path)->crop(568, 440); //①
+        $card_img = Image::make(public_path('image/e1DejUtlCSHnK3azoaBkthHVLRnrrEZ536lkZ700.png'))->crop(300, 300); //①
 
         //タイトルを画像に表示させる
         //表示させる文字、表示場所をx/yで指定する
-        $card_img ->text('text', 284, 100, function($font) {
-            $font->file('fonts/SawarabiGothic-Regular.ttf');
+        $card_img->text($request, 284, 100, function($font) {
             $font->size(30);
             $font->align('center');
             $font->color('#ffffff');
@@ -104,18 +102,18 @@ public function index(Request $request)
 
         //長めの文章を指定文字数で分割する
         $max_len = 26;
-        $lines = self::mb_wordwrap($description, $max_len);
+        $lines = self::mb_wordwrap($request, $max_len);
 
         //ディスクリプションを画像に表示させる
-        $card_img ->text($lines, 284, 280, function($font) {
-            $font->file('fonts/SawarabiGothic-Regular.ttf');
+        $card_img->text($lines, 284, 280, function($font) {
             $font->size(18);
             $font->align('center');
             $font->color('#ffffff');
         }); //②
 
         //storageに保存する(適宜書き換えてください)
-        $card_img->save(public_path('images/test.png'));
+        $card_img->save(public_path('image/test6.png'));
+        return redirect('admin/template/');
     }
     
     public function mb_wordwrap($str, $width, $break=PHP_EOL )

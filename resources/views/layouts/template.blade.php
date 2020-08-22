@@ -60,7 +60,8 @@
                                     <a class="dropdown-item" href="{{url('/admin/register')}}">リスト一覧</a>
                                     <a class="dropdown-item" href="#">カード作成</a>
                                     <a class="dropdown-item" href="#">カード一覧</a>
-                                    <a class="dropdown-item" href="#">設定</a>                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="#">設定</a>                                   
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('messages.Logout') }}

@@ -37,6 +37,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('template/edit', 'Admin\TemplateController@edit');
     Route::post('template/edit', 'Admin\TemplateController@card_create');
     
+    //仮
     Route::post('template/aaa', 'Admin\TemplateController@card_create');
     Route::post('template/bbb', 'Admin\TemplateController@mb_wordwrape');
     

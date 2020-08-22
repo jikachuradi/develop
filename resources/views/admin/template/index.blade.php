@@ -35,7 +35,7 @@
                          <tr>
                              <th width="5%"></th>
                              <th width="85%">テンプレート</th>
-                             <th width="10%">編集／削除</th>
+                             <th width="10%">作成／削除</th>
                          </tr>
                      </thead>
                      <tbody>
@@ -47,7 +47,7 @@
                              </td>
                             <td>
                                  <div>
-                                    <a href="{{ action('Admin\TemplateController@edit', ['id' => $template->id]) }}">編集</a>
+                                    <a href="{{ action('Admin\TemplateController@edit', ['id' => $template->id]) }}">作成</a>
                                  </div> 
                                  <div>
                                     <a href="{{ action('Admin\TemplateController@delete', ['id' => $template->id]) }}">削除</a>
