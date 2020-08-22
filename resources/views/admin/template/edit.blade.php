@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>カード作成</h2>
-                                <form action="{{ action('Admin\TemplateController@update') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ action('Admin\TemplateController@card_create') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                     <ul>
                         @foreach($errors->all() as $e)
@@ -21,6 +21,7 @@
                             <input type="file" class="form-control-file" name="image">
                             <div class="form-text text-info">
                                 選択中: {{ $template_form->image_path }}
+                        <input class="form-control" name="filename" value="{{ $template_form->image_path }}">
                             </div>
                             <img src="{{ asset('storage/image/' . $template_form->image_path) }}">
                             <div class="form-check">

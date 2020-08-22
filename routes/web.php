@@ -35,10 +35,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::post('template/create', 'Admin\TemplateController@create');
     Route::get('template', 'Admin\TemplateController@index');
     Route::get('template/edit', 'Admin\TemplateController@edit');
-    Route::post('template/edit', 'Admin\TemplateController@update');
-    
     Route::post('template/edit', 'Admin\TemplateController@card_create');
-    Route::post('template/edit', 'Admin\TemplateController@mb_wordwrape');
+    
+    Route::post('template/aaa', 'Admin\TemplateController@card_create');
+    Route::post('template/bbb', 'Admin\TemplateController@mb_wordwrape');
     
     Route::get('template/delete', 'Admin\TemplateController@delete');
 });

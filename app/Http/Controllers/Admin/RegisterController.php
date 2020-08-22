@@ -62,6 +62,7 @@ public function index(Request $request)
 
   public function update(Request $request)
   {
+    logger("test");
       // Validationをかける
       $this->validate($request, Register::$rules);
       // Register Modelからデータを取得する

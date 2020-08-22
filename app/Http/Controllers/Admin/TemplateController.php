@@ -61,8 +61,10 @@ public function index(Request $request)
       return view('admin.template.edit', ['template_form' => $template]);
   }
 
+
   public function update(Request $request)
   {
+    logger("test");
       // Validationをかける
       $this->validate($request, Template::$rules);
       // template Modelからデータを取得する
@@ -83,11 +85,13 @@ public function index(Request $request)
       return redirect('admin/template/');
   }
   
-  
-  
         public function card_create(Request $request){
-        //publicディレクトリにある元画像を取得し、指定の大きさに切り取る
-        $card_img = Image::make(public_path('image'))->crop(568, 440); //①
+        logger("★★★★★★★★★★");
+        logger($request);
+        //画像を取得し、指定の大きさに切り取る
+        $template_form = $request->all();
+        $path = $template_form->image_path;
+        $card_img = Image::make($path)->crop(568, 440); //①
 
         //タイトルを画像に表示させる
         //表示させる文字、表示場所をx/yで指定する
@@ -111,7 +115,7 @@ public function index(Request $request)
         }); //②
 
         //storageに保存する(適宜書き換えてください)
-        $card_img->save(public_path() . '/image/' .'resize-bohe.jpg'); //③
+        $card_img->save(public_path('images/test.png'));
     }
     
     public function mb_wordwrap($str, $width, $break=PHP_EOL )
@@ -123,7 +127,6 @@ public function index(Request $request)
         }
         return implode($break, $arr);
     }
-
 
 
 
