@@ -46,13 +46,28 @@
                         {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('messages.Login') }}</a></li>
-                        {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
+                            <li><a class="nav-link" href="{{ route('register') }}">{{ __('messages.Register') }}</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>                                
+                    <div class="content">
+                      <div class="title m-b-md">List of Celebrations</div>
+                      <div class="links">
+                        <a href="{{url('/login')}}">リスト登録</a>
+                        <a href="{{url('/login')}}">リスト一覧</a>
+                        <a href="{{url('/login')}}">カード作成</a>
+                        <a href="{{url('/login')}}">カード一覧</a>
+                        <a href="{{url('/login')}}">設定</a>
+                        </div>
+                       
+                {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} {{ __('’s MENU')}} <span class="caret"></span>
                                 </a>
-
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{url('/')}}">TOP</a>
@@ -84,16 +99,16 @@
                 <div class="links">
                     <a href="{{url('/admin/register/create')}}">リスト登録</a>
                     <a href="{{url('/admin/register/')}}">リスト一覧</a>
-                    <a href="{{url('/admin/card/create')}}">カード作成</a>
-                    <a href="#">カード一覧</a>
+                    <a href="{{url('/admin/template/create')}}">カード作成</a>
+                    <a href="{{url('/admin/template')}}">カード一覧</a>
                     <a href="#">設定</a>
                 </div>
                 
-                @endguest
             <main class="py-4">
                 @yield('content')
             </main>
         </div>
     </body>
     <footer class="footer">©️2020  List of Celebrations </footer>
+    @endguest
 </html>

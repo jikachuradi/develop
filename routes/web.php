@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home','HomeController@index')->name('home');
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     //register リスト
     Route::get('register/create', 'Admin\RegisterController@add');
@@ -45,5 +47,3 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

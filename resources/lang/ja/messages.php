@@ -6,4 +6,7 @@ return [
     'E-Mail Address' => 'メールアドレス',
     'Password' => 'パスワード',
     'Remember Me' => 'ログイン情報を記憶する',
+    'Register' => 'ユーザー登録',
+    'Name' => '名前',
+    'Confirm Password' => 'パスワード(再入力)',
 ];
