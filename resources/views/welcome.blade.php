@@ -24,12 +24,15 @@
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         {{-- CSSを読み込み --}}
         <link href="{{ secure_asset('css/welcome.css') }}" rel="stylesheet">
+        {{-- font-awesomeを読み込み --}}
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     </head>
+    
     <body>
         <div id="app">
-            {{-- 画面上部に表示するナビゲーションバー--}}
             <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <div class="container">
+                    
                     <a class="navbar-brand" href="{{ url('/') }}">
                     {{ __('List of Celebrations') }}
                     </a>
@@ -47,21 +50,24 @@
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('messages.Login') }}</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('messages.Register') }}</a></li>
-
                         </ul>
                     </div>
                 </div>
             </nav>                                
-                    <div class="content">
-                      <div class="title m-b-md">List of Celebrations</div>
-                      <div class="links">
-                        <a href="{{url('/login')}}">リスト登録</a>
-                        <a href="{{url('/login')}}">リスト一覧</a>
-                        <a href="{{url('/login')}}">カード作成</a>
-                        <a href="{{url('/login')}}">カード一覧</a>
-                        <a href="{{url('/login')}}">設定</a>
-                        </div>
-                       
+                <div class="content">
+                    <div class="title m-b-md">List of Celebrations</div>
+                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-user-plus"></span>リスト登録</a>
+                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-list"></span>リスト一覧</a>
+                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-square"></span>カード作成</a>
+                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-th-list"></span>カード一覧</a>
+                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-cog"></span>設定</a>
+                    </div>
+                </div>
+            <main class="py-4"></main>
+        </div>
+    </body>
+    <footer class="footer">©️2020  List of Celebrations </footer>
+    
                 {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
                         @else
                             <li class="nav-item dropdown">
@@ -92,16 +98,13 @@
                 </div>
             </nav>
                 <div class="content">
-                <div class="title m-b-md">
-                List of Celebrations    
-                </div>
-
-                <div class="links">
-                    <a href="{{url('/admin/register/create')}}">リスト登録</a>
-                    <a href="{{url('/admin/register/')}}">リスト一覧</a>
-                    <a href="{{url('/admin/template/create')}}">カード作成</a>
-                    <a href="{{url('/admin/template')}}">カード一覧</a>
-                    <a href="#">設定</a>
+                    <div class="title m-b-md">List of Celebrations</div>
+                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-user-plus"></span>リスト登録</a>
+                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-list"></span>リスト一覧</a>
+                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-square"></span>カード作成</a>
+                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-th-list"></span>カード一覧</a>
+                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-cog"></span>設定</a>
+                    </div>
                 </div>
                 
             <main class="py-4">

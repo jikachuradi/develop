@@ -90,7 +90,7 @@ public function index(Request $request)
         logger($request);
         //画像を取得し、指定の大きさに切り取る
         $template_form = $request->all();
-        $card_img = Image::make(public_path('image/e1DejUtlCSHnK3azoaBkthHVLRnrrEZ536lkZ700.png'))->crop(300, 300); //①
+        $card_img = Image::make(public_path('image/'. $template_form->image_path))->crop(300, 300);
 
         //タイトルを画像に表示させる
         //表示させる文字、表示場所をx/yで指定する
