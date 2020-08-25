@@ -90,11 +90,11 @@ public function index(Request $request)
         logger($request);
         //画像を取得し、指定の大きさに切り取る
         $template_form = $request->all();
-        $card_img = Image::make(public_path('image/'. $template_form->image_path))->crop(300, 300);
+        $card_img = Image::make(public_path('image/'. $template_form->filename))->crop(300, 300);
 
         //タイトルを画像に表示させる
         //表示させる文字、表示場所をx/yで指定する
-        $card_img->text($request, 284, 100, function($font) {
+        $card_img->text('messes', 284, 100, function($font) {
             $font->size(30);
             $font->align('center');
             $font->color('#ffffff');

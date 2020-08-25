@@ -29,9 +29,9 @@
                         </div>
                     </div>
                 　　<div class="form-group row">
-                    <label class="col-md-2" for="text">テキスト</label>
+                    <label class="col-md-2" for="messes">メッセージ</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control" name="text" value="{{ old('text') }}">
+                        <input type="text" class="form-control" name="messes" value="{{ old('text') }}">
                     </div>
                 　　</div>
                     <div class="form-group row">

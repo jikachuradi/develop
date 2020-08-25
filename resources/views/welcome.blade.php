@@ -56,10 +56,10 @@
             </nav>                                
                 <div class="content">
                     <div class="title m-b-md">List of Celebrations</div>
-                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-user-plus"></span>リスト登録</a>
-                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-list"></span>リスト一覧</a>
-                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-square"></span>カード作成</a>
-                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-th-list"></span>カード一覧</a>
+                            <a class="btn btn-secondary" href="{{ route('/admin/register/create') }}" ><span class="fa fa-user-plus"></span>リスト登録</a>
+                            <a class="btn btn-secondary" href="{{ route('/admin/register') }}" ><span class="fa fa-list"></span>リスト一覧</a>
+                            <a class="btn btn-secondary" href="{{ route('/admin/template/create') }}" ><span class="fa fa-square"></span>カード作成</a>
+                            <a class="btn btn-secondary" href="{{ route('/admin/template') }}" ><span class="fa fa-th-list"></span>カード一覧</a>
                             <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-cog"></span>設定</a>
                     </div>
                 </div>
@@ -79,8 +79,8 @@
                                     <a class="dropdown-item" href="{{url('/')}}">TOP</a>
                                     <a class="dropdown-item" href="{{url('/admin/register/create')}}">リスト登録</a>
                                     <a class="dropdown-item" href="{{url('/admin/register')}}">リスト一覧</a>
-                                    <a class="dropdown-item" href="{{url('/admin/card/create')}}">カード作成</a>
-                                    <a class="dropdown-item" href="#">カード一覧</a>
+                                    <a class="dropdown-item" href="{{url('/admin/template/create')}}">カード作成</a>
+                                    <a class="dropdown-item" href="{{url('/admin/template')}}">カード一覧</a>
                                     <a class="dropdown-item" href="#">設定</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

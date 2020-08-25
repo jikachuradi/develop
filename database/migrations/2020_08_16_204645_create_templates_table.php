@@ -16,6 +16,7 @@ class CreateTemplatesTable extends Migration
         Schema::create('templates', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('image_path')->nullable(); // 画像のパスを保存するカラム
+            $table->string('messes')->nullable();
             $table->timestamps();
         });
     }
