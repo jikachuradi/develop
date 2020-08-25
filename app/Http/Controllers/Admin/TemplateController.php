@@ -94,8 +94,9 @@ public function index(Request $request)
 
         //タイトルを画像に表示させる
         //表示させる文字、表示場所をx/yで指定する
-        $card_img->text('messes', 284, 100, function($font) {
-            $font->size(30);
+        $card_img->text($template_form['messes'], 150, 150, function($font) {
+            $font->file(storage_path('app/fonts/GenShinGothic-Heavy.ttf'));
+            $font->size(50);
             $font->align('center');
             $font->color('#ffffff');
         }); //②
@@ -112,7 +113,7 @@ public function index(Request $request)
         }); //②
 
         //storageに保存する(適宜書き換えてください)
-        $card_img->save(public_path('image/test6.png'));
+        $card_img->save(public_path('image/test7.png'));
         return redirect('admin/template/');
     }
     
