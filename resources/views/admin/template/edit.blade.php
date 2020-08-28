@@ -21,7 +21,7 @@
                             <input type="file" class="form-control-file" name="image">
                             <div class="form-text text-info">
                                 選択中: {{ $template_form->image_path }}
-                        <input class="form-control" name="filename" value="{{ $template_form->image_path }}">
+                        <input type="hidden" name="filename" value="{{ $template_form->image_path }}">
                             </div>
                             <img src="{{ asset('storage/image/' . $template_form->image_path) }}">
                             <div class="form-check">
@@ -31,7 +31,7 @@
                 　　<div class="form-group row">
                     <label class="col-md-2" for="messes">メッセージ</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control" name="messes" value="{{ old('text') }}">
+                        <textarea name="messes" class="form-control" rows="10" maxlength="100">{{$template_form->messes }}</textarea>
                     </div>
                 　　</div>
                     <div class="form-group row">

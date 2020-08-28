@@ -92,16 +92,12 @@ public function index(Request $request)
         //画像を取得し、指定の大きさに切り取る
         $template_form = $request->all();
         $card_img = Image::make(storage_path('app/public/image/'. $template_form['filename']))->crop(769, 562);
-        /*
-        $card_img = Image::make(public_path('image/'. $template_form['filename']))->crop(769, 562);
-        */
-        /*
+        /* 画像指定する場合
         $card_img = Image::make(public_path('image/dtH6o5FNxf8c1Z4d1RlKvlC2wfcNkBDRn5MnpfKm.png'))->crop(512, 256);
         */
         
         //タイトル入力しないので不要（名前入力で使用するかも）
-        //タイトルを画像に表示させる
-        //表示させる文字、表示場所をx/yで指定する
+        //タイトルを画像に表示させる.表示させる文字、表示場所をx/yで指定する
        /* 
        $card_img->text($template_form['messes'], 400, 300, function($font) {
             $font->file(storage_path('app/fonts/GenShinGothic-Heavy.ttf'));
@@ -112,19 +108,20 @@ public function index(Request $request)
         */
 
         //長めの文章を指定文字数で分割する
-        $max_len = 26;
+        $max_len = 50; //少なく設定すると変な箇所で改行されてしまうので要検討
         $lines = self::mb_wordwrap($template_form['messes'], $max_len);
 
         //テキストを画像に表示させる
-        $card_img->text($lines, 400, 400, function($font) {
+        $card_img->text($lines, 390, 300, function($font) {
             $font->file(storage_path('app/fonts/GenShinGothic-Heavy.ttf'));
             $font->size(20);
             $font->align('center');
             $font->color('#ff0000');
         });
 
-        //storageに保存する(適宜書き換えてください)
-        $card_img->save(public_path('image/test13.png'));
+        //storageに保存する
+        //$card_img->save(public_path('image/test14.png'));　保存先を指定する場合
+        $card_img->save();
         return redirect('admin/template/');
     }
     
@@ -137,8 +134,6 @@ public function index(Request $request)
         }
         return implode($break, $arr);
     }
-
-
 
   public function delete(Request $request)
   {

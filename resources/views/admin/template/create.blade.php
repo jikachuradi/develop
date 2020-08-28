@@ -27,12 +27,7 @@
                             <input type="file" class="form-control-file" name="image">
                         </div>
                     </div>
-               　　<div class="form-group row">
-                    <label class="col-md-2" for="messes">メッセージ</label>
-                    <div class="col-md-10">
-                        <input type="text" class="form-control" name="messes" value="{{ old('text') }}">
-                    </div>
-                　　</div>                    {{ csrf_field() }}
+                   {{ csrf_field() }}
                     <input type="submit" class="btn btn-secondary" value="保存">
                 </form>
             </div>
