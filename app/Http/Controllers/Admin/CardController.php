@@ -5,6 +5,10 @@ use App\Http\Controllers\Controller;
 
 use App\Card;
 
+use App\Template;
+
+use Illuminate\Support\Facades\Auth;
+
 class CardController extends Controller
 {
   
@@ -38,15 +42,12 @@ class CardController extends Controller
 
 public function index(Request $request)
 {
-    $cond_name = $request -> cond_name;
-    if ($cond_name != ''){
-        //検索されたら検索結果を取得する
-        $posts = Card::where('name', $cond_name)->get();
-        } else {
-            //それ以外はすべてのニュースを取得する
-            $posts = Card::all();
-        }
-        return view('admin.card.index', ['posts' => $posts, 'cond_name' => $cond_name]);
+      $user_id = Auth::id();
+      $place = 'storage/image/' . $user_id . '/';
+      $files = \File::allFiles($place);
+      
+    $card = new Card;
+      return view('admin.card.index',['filename'=> $card]);
 }
 
   public function edit(Request $request)

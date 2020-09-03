@@ -22,8 +22,8 @@
         <!-- Styles -->
         {{-- Laravel標準で用意されているCSSを読み込み --}}
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-        {{-- card.scssを読み込み --}}
-        <link href="{{ secure_asset('css/card.css') }}" rel="stylesheet">
+        {{-- template.scssを読み込み --}}
+        <link href="{{ secure_asset('css/template.css') }}" rel="stylesheet">
     </head>
     
     <body>
@@ -60,7 +60,8 @@
                                     <a class="dropdown-item" href="{{url('/admin/register')}}">リスト一覧</a>
                                     <a class="dropdown-item" href="#">カード作成</a>
                                     <a class="dropdown-item" href="#">カード一覧</a>
-                                    <a class="dropdown-item" href="#">設定</a>                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="#">設定</a>                                   
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('messages.Logout') }}
@@ -82,5 +83,4 @@
             </main>
         </div>
     </body>
-    <footer class="footer">©️2020 List of Celebrationst</footer>
 </html>

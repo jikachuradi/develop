@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 
 use App\Template;
 
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -53,12 +55,22 @@ public function index(Request $request)
 
   public function edit(Request $request)
   {
-      // Template Modelからデータを取得する
-      $template = Template::find($request->id);
-      if (empty($template)) {
-        abort(404);    
+      // データを取得する
+      $img = $_GET['num'];
+      if ($img=='template1') {
+        $image='storage/image/template/1.jpg';
+      }elseif ($img=='template2') {
+        $image='storage/image/template/2.jpg';
+      }elseif ($img=='template3') {
+        $image='template3';
       }
+      
+      $template= new Template;
+      $path = $image;
+      $template->image_path = basename($path);
+
       return view('admin.template.edit', ['template_form' => $template]);
+      logger("★★★★★★★★★★");
   }
 
 /* 不要
@@ -91,7 +103,7 @@ public function index(Request $request)
         logger($request);
         //画像を取得し、指定の大きさに切り取る
         $template_form = $request->all();
-        $card_img = Image::make(storage_path('app/public/image/'. $template_form['filename']))->crop(769, 562);
+        $card_img = Image::make(storage_path('app/public/image/template/'. $template_form['filename']))->crop(769, 562);
         /* 画像指定する場合
         $card_img = Image::make(public_path('image/dtH6o5FNxf8c1Z4d1RlKvlC2wfcNkBDRn5MnpfKm.png'))->crop(512, 256);
         */
@@ -121,8 +133,9 @@ public function index(Request $request)
 
         //storageに保存する
         //$card_img->save(public_path('image/test14.png'));　保存先を指定する場合
-        $card_img->save();
-        return redirect('admin/template/');
+        $user_id = Auth::id();
+        $card_img->save(storage_path('app/public/image/'. $user_id . '/' . $template_form['filename']));
+        return redirect('admin/card');
     }
     
     public function mb_wordwrap($str, $width=20, $break=PHP_EOL )
