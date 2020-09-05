@@ -1,15 +1,14 @@
 @extends('layouts.card')
 
-@section('title', 'カード一覧')
+@section('title', 'メッセージカード一覧')
 
 @section('content')
      <div class="container">
          <div class="row">
-             <h2>カード一覧</h2>
+             <h2>メッセージカード一覧</h2>
          </div>
          <div class="row">
              <div class="col-md-4">
-                 <input type="hidden" role="button" class="btn btn-secondary">テンプレート登録</a>
              </div>
              <div class="col-md-8">
 
@@ -20,7 +19,6 @@
                          </div>
                          <div class="col-md-2">
                              {{ csrf_field() }}
-                             <input type="hidden" class="btn btn-secondary" value="検索">
                          </div>
                      </div>
                  </form>
@@ -33,21 +31,19 @@
                  <table class="table">
                      <thead>
                          <tr>
-                             <th width="5%"></th>
                              <th width="75%">メッセージカード </th>
-                             <th width="20%">カード削除</th>
+                             <th width="20%">メッセージカード削除</th>
                          </tr>
                      </thead>
                      <tbody>
-                         @foreach($place as $files)
+                         @foreach($cards as $card)
                          <tr>
-                             <th>{{ $card->id }}</th>
                              <td>
-                             <img src="{{ asset('storage/image/' . $user_id . '/' .$template_form['filename'])}}">
+                             <img src="{{ asset($card)}}" name="">
                              </td>
                             <td>
                                 <div>
-                                    <a href="{{ action('Admin\CardController@delete', ['id' => $card->id]) }}">カード削除</a>
+                                    <a href="{{ action('Admin\CardController@delete',['card' => $card])}}">メッセージカード削除</a>
                                 </div>
                              </td>
                         </tr>

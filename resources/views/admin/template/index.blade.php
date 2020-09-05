@@ -39,7 +39,6 @@
                             </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="hidden" src="{{ asset('storage/image/template/1.jpg')}}">
                                 <input type="submit" class="btn btn-secondary" name="num" value="template1">
                                 </form>
                             </td>
@@ -51,7 +50,6 @@
                             <td>
                             <div>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="hidden" src="{{ asset('storage/image/template/2.jpg')}}">
                                 <input type="submit" class="btn btn-secondary" name="num" value="template2">
                             </div>                                  
                             </div> 

@@ -47,7 +47,7 @@ public function index(Request $request)
         //検索されたら検索結果を取得する
         $posts = Template::where('name', $cond_name)->get();
         } else {
-            //それ以外はすべてのニュースを取得する
+            //それ以外はすべてを取得する
             $posts = Template::all();
         }
         return view('admin.template.index', ['posts' => $posts, 'cond_name' => $cond_name]);
@@ -72,31 +72,6 @@ public function index(Request $request)
       return view('admin.template.edit', ['template_form' => $template]);
       logger("★★★★★★★★★★");
   }
-
-/* 不要
-  public function update(Request $request)
-  {
-    logger("test");
-      // Validationをかける
-      $this->validate($request, Template::$rules);
-      // template Modelからデータを取得する
-      $template = Template::find($request->id);
-      // 送信されてきたフォームデータを格納する
-      $template_form = $request->all();
-      if (isset($template_form['image'])) {
-        $path = $request->file('image')->store('public/image');
-        $template->image_path = basename($path);
-        unset($template_form['image']);
-      } elseif (isset($template->remove)) {
-        $template->image_path = null;
-        unset($template_form['remove']);
-      }      
-      unset($template_form['_token']);
-      // 該当するデータを上書きして保存する
-      $template->fill($template_form)->save();
-      return redirect('admin/template/');
-  }
-  */
   
         public function card_create(Request $request){
         logger("★★★★★★★★★★");
@@ -104,9 +79,6 @@ public function index(Request $request)
         //画像を取得し、指定の大きさに切り取る
         $template_form = $request->all();
         $card_img = Image::make(storage_path('app/public/image/template/'. $template_form['filename']))->crop(769, 562);
-        /* 画像指定する場合
-        $card_img = Image::make(public_path('image/dtH6o5FNxf8c1Z4d1RlKvlC2wfcNkBDRn5MnpfKm.png'))->crop(512, 256);
-        */
         
         //タイトル入力しないので不要（名前入力で使用するかも）
         //タイトルを画像に表示させる.表示させる文字、表示場所をx/yで指定する
@@ -134,7 +106,8 @@ public function index(Request $request)
         //storageに保存する
         //$card_img->save(public_path('image/test14.png'));　保存先を指定する場合
         $user_id = Auth::id();
-        $card_img->save(storage_path('app/public/image/'. $user_id . '/' . $template_form['filename']));
+        $filename = uniqid().'jpg';
+        $card_img->save(storage_path('app/public/image/'. $user_id . '/' . $filename.$template_form['filename']));
         return redirect('admin/card');
     }
     

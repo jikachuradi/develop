@@ -43,11 +43,9 @@ class CardController extends Controller
 public function index(Request $request)
 {
       $user_id = Auth::id();
-      $place = 'storage/image/' . $user_id . '/';
-      $files = \File::allFiles($place);
-      
-    $card = new Card;
-      return view('admin.card.index',['filename'=> $card]);
+      $cards = glob('storage/image/'.$user_id.'/*');
+
+      return view('admin.card.index',['cards' => $cards]);
 }
 
   public function edit(Request $request)
@@ -85,10 +83,8 @@ public function index(Request $request)
 
   public function delete(Request $request)
   {
-      // 該当するCard Modelを取得
-      $card = Card::find($request->id);
       // 削除する
-      $card->delete();
+      \File::delete('card');
       return redirect('admin/card/');
   }  
 }
