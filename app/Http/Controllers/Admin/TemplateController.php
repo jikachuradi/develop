@@ -62,7 +62,21 @@ public function index(Request $request)
       }elseif ($img=='template2') {
         $image='storage/image/template/2.jpg';
       }elseif ($img=='template3') {
-        $image='template3';
+        $image='storage/image/template/3.jpg';
+      }elseif ($img=='template4') {
+        $image='storage/image/template/4.jpg';
+      }elseif ($img=='template5') {
+        $image='storage/image/template/5.jpg';
+      }elseif ($img=='template6') {
+        $image='storage/image/template/6.jpg';
+      }elseif ($img=='template_spring') {
+        $image='storage/image/template/spring.jpg';
+      }elseif ($img=='template_summer') {
+        $image='storage/image/template/summer.jpg';
+      }elseif ($img=='template_autumn') {
+        $image='storage/image/template/autumn.jpg';  
+      }elseif ($img=='template_winter') {
+        $image='storage/image/template/winter.jpg';  
       }
       
       $template= new Template;

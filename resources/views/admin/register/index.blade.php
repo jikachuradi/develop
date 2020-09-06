@@ -31,8 +31,7 @@
                  <table class="table">
                      <thead>
                          <tr>
-                             <th width="5%"></th>
-                             <th width="15%">写真</th>
+                             <th width="20%">写真</th>
                              <th width="15%">名前</th>
                              <th width="12%">誕生日</th>
                              <th width="12%">記念日</th>
@@ -44,7 +43,6 @@
                      <tbody>
                          @foreach($posts as $register)
                          <tr>
-                             <th>{{ $register->id }}</th>
                              <td>
                              <img src="{{ asset('storage/image/' . $register->image_path) }}">
                              </td>

@@ -56,11 +56,10 @@
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{url('/')}}">TOP</a>
-                                    <a class="dropdown-item" href="{{url('/admin/register/create')}}">リスト保存</a>
+                                    <a class="dropdown-item" href="{{url('/admin/register/create')}}">リスト登録</a>
                                     <a class="dropdown-item" href="{{url('/admin/register')}}">リスト一覧</a>
-                                    <a class="dropdown-item" href="#">カード作成</a>
-                                    <a class="dropdown-item" href="#">カード一覧</a>
-                                    <a class="dropdown-item" href="#">設定</a>                                   
+                                    <a class="dropdown-item" href="{{url('/admin/template')}}">カード作成</a>
+                                    <a class="dropdown-item" href="{{url('/admin/card')}}">メッセージカード一覧</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
