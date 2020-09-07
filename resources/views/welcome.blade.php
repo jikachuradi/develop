@@ -58,7 +58,7 @@
                     <div class="title m-b-md">List of Celebrations</div>
                             <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-user-plus"></span>リスト登録</a>
                             <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-list"></span>リスト一覧</a>
-                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-square"></span>カード作成</a>
+                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-square"></span>メッセージカード作成</a>
                             <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-th-list"></span>メッセージカード一覧</a>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                                     <a class="dropdown-item" href="{{url('/')}}">TOP</a>
                                     <a class="dropdown-item" href="{{url('/admin/register/create')}}">リスト登録</a>
                                     <a class="dropdown-item" href="{{url('/admin/register')}}">リスト一覧</a>
-                                    <a class="dropdown-item" href="{{url('/admin/template')}}">カード作成</a>
+                                    <a class="dropdown-item" href="{{url('/admin/template')}}">メッセージカード作成</a>
                                     <a class="dropdown-item" href="{{url('/admin/card')}}">メッセージカード一覧</a>
                                     <a class="dropdown-item" href="#">設定</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -100,7 +100,7 @@
                     <div class="title m-b-md">List of Celebrations</div>
                             <a class="btn btn-secondary" href="{{url('/admin/register/create')}}" ><span class="fa fa-user-plus"></span>リスト登録</a>
                             <a class="btn btn-secondary" href="{{url('/admin/register')}}" ><span class="fa fa-list"></span>リスト一覧</a>
-                            <a class="btn btn-secondary" href="{{url('/admin/template')}}" ><span class="fa fa-square"></span>カード作成</a>
+                            <a class="btn btn-secondary" href="{{url('/admin/template')}}" ><span class="fa fa-square"></span>メッセージカード作成</a>
                             <a class="btn btn-secondary" href="{{url('/admin/card')}}" ><span class="fa fa-th-list"></span>メッセージカード一覧</a>
                     </div>
                 </div>

@@ -61,7 +61,7 @@
                                     <a class="dropdown-item" href="{{url('/')}}">TOP</a>
                                     <a class="dropdown-item" href="{{url('/admin/register/create')}}">リスト登録</a>
                                     <a class="dropdown-item" href="{{url('/admin/register')}}">リスト一覧</a>
-                                    <a class="dropdown-item" href="{{url('/admin/template')}}">カード作成</a>
+                                    <a class="dropdown-item" href="{{url('/admin/template')}}">メッセージカード作成</a>
                                     <a class="dropdown-item" href="{{url('/admin/card')}}">メッセージカード一覧</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

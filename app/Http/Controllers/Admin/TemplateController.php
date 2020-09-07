@@ -85,7 +85,7 @@ public function index(Request $request)
 
       return view('admin.template.edit', ['template_form' => $template]);
       logger("★★★★★★★★★★");
-  }
+      }
   
         public function card_create(Request $request){
         logger("★★★★★★★★★★");
@@ -120,10 +120,10 @@ public function index(Request $request)
         //storageに保存する
         //$card_img->save(public_path('image/test14.png'));　保存先を指定する場合
         $user_id = Auth::id();
-        $filename = uniqid().'jpg';
+        $filename = uniqid();
         $card_img->save(storage_path('app/public/image/'. $user_id . '/' . $filename.$template_form['filename']));
         return redirect('admin/card');
-    }
+        }
     
     public function mb_wordwrap($str, $width=20, $break=PHP_EOL )
     {
