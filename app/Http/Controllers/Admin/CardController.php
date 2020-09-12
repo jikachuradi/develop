@@ -43,7 +43,7 @@ class CardController extends Controller
 public function index(Request $request)
 {
       $user_id = Auth::id();
-      $cards = glob('storage/image/'.$user_id.'/*');
+      $cards = glob('storage/image/'.$user_id.'/*'); //publicから抽出（配列のため（ワイルドカード））
 
       return view('admin.card.index',['cards' => $cards]);
 }
@@ -84,7 +84,13 @@ public function index(Request $request)
   public function delete(Request $request)
   {
       // 削除する
-      \File::delete('card');
+      logger($request);
+      logger('/home/ec2-user/environment/develop/public/app/public/'. $request['card']);
+      $str = $request['card'];
+      $str_change = str_replace('storage', '', $str); //場所（storage）を空白（''）に入れ替え
+      $str_delete = storage_path('app/public' . $str_change);
+      logger($str_delete);
+      \File::delete($str_delete);
       return redirect('admin/card/');
   }  
 }

@@ -41,7 +41,8 @@ public function index(Request $request)
     $cond_name = $request -> cond_name;
     if ($cond_name != ''){
         //検索されたら検索結果を取得する
-        $posts = Register::where('name', $cond_name)->get();
+        //「where」条件付、「like」似ている、「％」なんでも良い(曖昧検索)、「"{}"」エスケープ（文字列ではなく変数入れるため）
+        $posts = Register::where('name', 'like', "%{$cond_name}%")->get(); 
         } else {
             //それ以外はすべてのニュースを取得する
             $posts = Register::all();

@@ -25,21 +25,21 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('register/edit', 'Admin\RegisterController@edit');
     Route::post('register/edit', 'Admin\RegisterController@update');
     Route::get('register/delete', 'Admin\RegisterController@delete');
-    //card　カード
-    Route::get('card/create', 'Admin\CardController@add');
-    Route::post('card/create', 'Admin\CardController@create');
-    Route::get('card', 'Admin\CardController@index');
-    Route::get('card/edit', 'Admin\CardController@edit');
-    Route::post('card/edit', 'Admin\CardController@update');
-    Route::get('card/delete', 'Admin\CardController@delete');
-    //template
+    
+    //template　テンプレート
     Route::get('template/create', 'Admin\TemplateController@add');
     Route::post('template/create', 'Admin\TemplateController@create');
     Route::get('template', 'Admin\TemplateController@index');
     Route::get('template/edit', 'Admin\TemplateController@edit');
     Route::post('template/edit', 'Admin\TemplateController@card_create');
     
-    //仮
+    //card　カード
+    Route::get('card', 'Admin\CardController@index');
+    Route::get('card/edit', 'Admin\CardController@edit');
+    Route::post('card/edit', 'Admin\CardController@update');
+    Route::get('card/delete', 'Admin\CardController@delete');
+    
+    //メッセージカード作成用
     Route::post('template/aaa', 'Admin\TemplateController@card_create');
     Route::post('template/bbb', 'Admin\TemplateController@mb_wordwrape');
     

@@ -84,7 +84,6 @@ public function index(Request $request)
       $template->image_path = basename($path);
 
       return view('admin.template.edit', ['template_form' => $template]);
-      logger("★★★★★★★★★★");
       }
   
         public function card_create(Request $request){

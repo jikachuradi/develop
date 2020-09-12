@@ -39,6 +39,12 @@ body {
   background-color: rgba(0, 0, 0, 0);
 }
 
+.img {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+}
+
 .footer {
   background-color: #c0c0c0;
   color: #fff;

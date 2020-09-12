@@ -31,7 +31,7 @@
                 　　<div class="form-group row">
                     <label class="col-md-2" for="messes">メッセージ</label>
                     <div class="col-md-10">
-                        <textarea name="messes" class="form-control" rows="10" maxlength="100">{{$template_form->messes}}</textarea>
+                        <textarea name="messes" class="form-control" cols='10' rows="10" maxlength="100">{{$template_form->messes}}</textarea>
                     </div>
                 　　</div>
                     <div class="form-group row">
