@@ -43,6 +43,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::post('template/aaa', 'Admin\TemplateController@card_create');
     Route::post('template/bbb', 'Admin\TemplateController@mb_wordwrape');
     
+    Route::get('welcome', 'Admin\WelcomeController@notice');
+    
     Route::get('template/delete', 'Admin\TemplateController@delete');
 });
 

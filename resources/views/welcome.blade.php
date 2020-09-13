@@ -100,8 +100,10 @@
                     <div class="title m-b-md">Bird</div>
                     <div class="sub-title m-b-md-2">- Birth × Card -</div>
                     
-                            <div class="text notification">今日は○月○日　○○さんのお○○日です！</div>
-                            
+                 <form action="{{ action('Admin\WelcomeController@notice') }}" method="get">
+                            <div class="text notice">今日は{{$today->today}} {{$name->name}}さんの{{$birthday->birthday}}日です！</div>
+                 </form>
+
                             <a class="btn btn-primary" href="{{url('/admin/register/create')}}" ><span class="fa fa-user-plus"></span>リスト登録</a>
                             <a class="btn btn-primary" href="{{url('/admin/register')}}" ><span class="fa fa-list"></span>リスト一覧</a>
                             <a class="btn btn-primary" href="{{url('/admin/template')}}" ><span class="fa fa-square"></span>メッセージカード作成</a>
