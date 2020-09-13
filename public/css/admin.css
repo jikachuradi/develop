@@ -5,17 +5,23 @@ body {
   color: #000;
 }
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+h2 {
+  color: #636b6f;
+  margin-bottom: 20px;
 }
 
-.navbar-brand {
-  color: #000 !important;
+.form-group {
+  color: #636b6f;
 }
 
-.nav-link {
-  color: #000 !important;
+.img {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+}
+
+.card-header {
+  background-color: #eeffff;
 }
 
 .table-dark {
@@ -39,15 +45,18 @@ body {
   background-color: rgba(0, 0, 0, 0);
 }
 
-.img {
-  border-radius: 50%;
-  width: 180px;
-  height: 180px;
+.table {
+  color: #636b6f;
+}
+
+.form-group {
+  margin-top: 15px;
 }
 
 .footer {
-  background-color: #c0c0c0;
-  color: #fff;
+  background-color: #eeffff;
+  color: #636b6f;
   text-align: center;
+  margin-top: 30px;
 }
 

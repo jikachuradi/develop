@@ -49903,6 +49903,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/template.scss":
+/*!**************************************!*\
+  !*** ./resources/sass/template.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/welcome.scss":
 /*!*************************************!*\
   !*** ./resources/sass/welcome.scss ***!
@@ -49915,9 +49926,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/welcome.scss ./resources/sass/app.scss ./resources/sass/admin.scss ./resources/sass/card.scss ***!
-  \**************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/welcome.scss ./resources/sass/app.scss ./resources/sass/admin.scss ./resources/sass/card.scss ./resources/sass/template.scss ***!
+  \*********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -49925,7 +49936,8 @@ __webpack_require__(/*! /home/ec2-user/environment/develop/resources/js/app.js *
 __webpack_require__(/*! /home/ec2-user/environment/develop/resources/sass/welcome.scss */"./resources/sass/welcome.scss");
 __webpack_require__(/*! /home/ec2-user/environment/develop/resources/sass/app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! /home/ec2-user/environment/develop/resources/sass/admin.scss */"./resources/sass/admin.scss");
-module.exports = __webpack_require__(/*! /home/ec2-user/environment/develop/resources/sass/card.scss */"./resources/sass/card.scss");
+__webpack_require__(/*! /home/ec2-user/environment/develop/resources/sass/card.scss */"./resources/sass/card.scss");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/develop/resources/sass/template.scss */"./resources/sass/template.scss");
 
 
 /***/ })

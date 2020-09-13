@@ -1,12 +1,31 @@
+.body{
+  background-color:#fff;
+}
+
 .content {
   margin-top: 150px;
   text-align: center;
   }
+  
+.navbar-brand{
+  color: #636b6f;
+}
 
 .title {
-  color: #636b6f;
+  color: #0099ff;
   font-size: 84px;
   }
+  
+.sub-title {
+  color: #636b6f;
+  font-size: 40px;
+  }
+  
+.text{
+  color: #636b6f;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
 
 .links > a {
   color: #636b6f;
@@ -19,16 +38,25 @@
   }
 
 .m-b-md {
-  margin-bottom: 150px;
+  margin-bottom: 10px;
   }
+
+.m-b-md-2{
+  margin-bottom: 80px;
+}
+
+.btn{
+  margin-bottom: 80px;
+  padding: 10px 15px;
+}
 
 .btn + .btn {
     margin-left: 1rem;
 }
             
 .footer{
-  background-color: #c0c0c0;
-  color: #fff;
+  background-color: #eeffff;
+  color: #636b6f;
   text-align:center;
-  margin-top: 200px;
-  }
+  margin-top: 30px;
+}

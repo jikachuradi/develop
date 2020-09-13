@@ -9,7 +9,7 @@
          </div>
          <div class="row">
              <div class="col-md-4">
-                 <a href="{{ action('Admin\TemplateController@index') }}" role="button" class="btn btn-secondary">メッセージカード 作成</a>
+                 <a href="{{ action('Admin\TemplateController@index') }}" role="button" class="btn btn-primary">メッセージカード 作成</a>
              </div>
              <div class="col-md-8">
 

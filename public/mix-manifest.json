@@ -3,5 +3,6 @@
     "/css/welcome.css": "/css/welcome.css",
     "/css/app.css": "/css/app.css",
     "/css/admin.css": "/css/admin.css",
-    "/css/card.css": "/css/card.css"
+    "/css/card.css": "/css/card.css",
+    "/css/template.css": "/css/template.css"
 }

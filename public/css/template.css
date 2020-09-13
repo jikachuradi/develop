@@ -5,12 +5,12 @@ body {
   color: #000;
 }
 
-h2{
+h2 {
   color: #636b6f;
   margin-bottom: 20px;
 }
 
-.table{
+.table {
   color: #636b6f;
 }
 
@@ -19,14 +19,15 @@ h2{
   background-color: #fff;
 }
 
-.form-group{
+.form-group {
   color: #636b6f;
   margin-top: 30px;
 }
 
-.footer{
+.footer {
   background-color: #eeffff;
   color: #636b6f;
-  text-align:center;
+  text-align: center;
   margin-top: 30px;
 }
+

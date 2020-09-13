@@ -39,7 +39,7 @@
                             </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-secondary" name="num" value="template1">
+                                <input type="submit" class="btn btn-primary" name="num" value="template1">
                                 </form>
                             </td>
                          </tr>
@@ -49,7 +49,7 @@
                              </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-secondary" name="num" value="template2">
+                                <input type="submit" class="btn btn-primary" name="num" value="template2">
                                 </form>	
                             </td>
                          </tr>
@@ -59,7 +59,7 @@
                              </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-secondary" name="num" value="template3">
+                                <input type="submit" class="btn btn-primary" name="num" value="template3">
                                 </form>	
                             </td>
                          </tr>
@@ -69,7 +69,7 @@
                              </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-secondary" name="num" value="template4">
+                                <input type="submit" class="btn btn-primary" name="num" value="template4">
                                 </form>	
                             </td>
                          </tr>
@@ -79,7 +79,7 @@
                              </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-secondary" name="num" value="template5">
+                                <input type="submit" class="btn btn-primary" name="num" value="template5">
                                 </form>	
                             </td>
                          </tr>
@@ -89,7 +89,7 @@
                              </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-secondary" name="num" value="template_spring">
+                                <input type="submit" class="btn btn-primary" name="num" value="template_spring">
                                 </form>	
                             </td>
                          </tr>
@@ -99,7 +99,7 @@
                              </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-secondary" name="num" value="template_summer">
+                                <input type="submit" class="btn btn-primary" name="num" value="template_summer">
                                 </form>	
                             </td>
                          </tr>
@@ -109,7 +109,7 @@
                              </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-secondary" name="num" value="template_autumn">
+                                <input type="submit" class="btn btn-primary" name="num" value="template_autumn">
                                 </form>	
                             </td>
                          </tr>
@@ -119,7 +119,7 @@
                              </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-secondary" name="num" value="template_winter">
+                                <input type="submit" class="btn btn-primary" name="num" value="template_winter">
                                 </form>
                             </td>
                          </tr>

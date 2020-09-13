@@ -9,7 +9,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>List of Celebrations</title>
+        <title>Bird - Birth × Card -</title>
 
         <!-- Scripts -->
          {{-- Laravel標準で用意されているJavascriptを読み込み --}}
@@ -28,14 +28,13 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     </head>
     
-    <body>
+    <body class="body">
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <div class="container">
-                    
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ __('List of Celebrations') }}
-                    </a>
+                    <div class="navbar-brand" href="{{ url('/') }}">
+                    Bird - Birth × Card -
+                    </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -55,11 +54,13 @@
                 </div>
             </nav>                                
                 <div class="content">
-                    <div class="title m-b-md">List of Celebrations</div>
-                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-user-plus"></span>リスト登録</a>
-                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-list"></span>リスト一覧</a>
-                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-square"></span>メッセージカード作成</a>
-                            <a class="btn btn-secondary" href="{{ route('login') }}" ><span class="fa fa-th-list"></span>メッセージカード一覧</a>
+                    <div class="title m-b-md">Bird</div>
+                         <div class="sub-title m-b-md-2">- Birth × Card -</div>
+                                <a class="btn btn-primary" href="{{ route('login') }}" ><span class="fa fa-user-plus"></span>リスト登録</a>
+                                <a class="btn btn-primary" href="{{ route('login') }}" ><span class="fa fa-list"></span>リスト一覧</a>
+                                <a class="btn btn-primary" href="{{ route('login') }}" ><span class="fa fa-square"></span>メッセージカード作成</a>
+                                <a class="btn btn-primary" href="{{ route('login') }}" ><span class="fa fa-th-list"></span>メッセージカード一覧</a>
+                        <div><img src="{{ asset('storage/image/main.jpg')}}"></div>
                     </div>
                 </div>
             <main class="py-4"></main>
@@ -80,7 +81,6 @@
                                     <a class="dropdown-item" href="{{url('/admin/register')}}">リスト一覧</a>
                                     <a class="dropdown-item" href="{{url('/admin/template')}}">メッセージカード作成</a>
                                     <a class="dropdown-item" href="{{url('/admin/card')}}">メッセージカード一覧</a>
-                                    <a class="dropdown-item" href="#">設定</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -97,11 +97,16 @@
                 </div>
             </nav>
                 <div class="content">
-                    <div class="title m-b-md">List of Celebrations</div>
-                            <a class="btn btn-secondary" href="{{url('/admin/register/create')}}" ><span class="fa fa-user-plus"></span>リスト登録</a>
-                            <a class="btn btn-secondary" href="{{url('/admin/register')}}" ><span class="fa fa-list"></span>リスト一覧</a>
-                            <a class="btn btn-secondary" href="{{url('/admin/template')}}" ><span class="fa fa-square"></span>メッセージカード作成</a>
-                            <a class="btn btn-secondary" href="{{url('/admin/card')}}" ><span class="fa fa-th-list"></span>メッセージカード一覧</a>
+                    <div class="title m-b-md">Bird</div>
+                    <div class="sub-title m-b-md-2">- Birth × Card -</div>
+                    
+                            <div class="text notification">今日は○月○日　○○さんのお○○日です！</div>
+                            
+                            <a class="btn btn-primary" href="{{url('/admin/register/create')}}" ><span class="fa fa-user-plus"></span>リスト登録</a>
+                            <a class="btn btn-primary" href="{{url('/admin/register')}}" ><span class="fa fa-list"></span>リスト一覧</a>
+                            <a class="btn btn-primary" href="{{url('/admin/template')}}" ><span class="fa fa-square"></span>メッセージカード作成</a>
+                            <a class="btn btn-primary" href="{{url('/admin/card')}}" ><span class="fa fa-th-list"></span>メッセージカード一覧</a>
+                        <div><img src="{{ asset('storage/image/main.jpg')}}"></div>
                     </div>
                 </div>
                 
@@ -110,6 +115,6 @@
             </main>
         </div>
     </body>
-    <footer class="footer">©️2020  List of Celebrations </footer>
+    <footer class="footer">©️2020 Bird - Birth × Card - </footer>
     @endguest
 </html>

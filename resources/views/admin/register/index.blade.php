@@ -8,7 +8,7 @@
          </div>
          <div class="row">
              <div class="col-md-4">
-                 <a href="{{ action('Admin\RegisterController@add') }}" role="button" class="btn btn-secondary">新規登録</a>
+                 <a href="{{ action('Admin\RegisterController@add') }}" role="button" class="btn btn-primary">新規登録</a>
              </div>
              <div class="col-md-8">
                  <form action="{{ action('Admin\RegisterController@index') }}"method="get">
@@ -19,7 +19,7 @@
                          </div>
                          <div class="col-md-2">
                              {{ csrf_field() }}
-                             <input type="submit" class="btn btn-secondary" value="検索">
+                             <input type="submit" class="btn btn-primary" value="検索">
                          </div>
                      </div>
                  </form>

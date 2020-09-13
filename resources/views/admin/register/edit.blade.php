@@ -15,7 +15,7 @@
                         @endforeach
                     </ul>
                 @endif
-                <img src="{{ asset('storage/image/' . $register_form->image_path) }}">
+                <img class="img" src="{{ asset('storage/image/' . $register_form->image_path) }}">
                 
                 <div class="form-group row">
                     <label class="col-md-2" for="name">名前</label>
@@ -83,7 +83,7 @@
                      <div class="form-group row">
                     <div class="col-md-10">
                         <input type="hidden" name="id" value="{{ $register_form->id }}">                        {{ csrf_field() }}
-                   <input type="submit" class="btn btn-secondary" value="更新">
+                   <input type="submit" class="btn btn-primary" value="更新">
                     </div>
                 </div>
             </form>

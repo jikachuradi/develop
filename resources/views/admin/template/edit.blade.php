@@ -37,7 +37,7 @@
                     <div class="form-group row">
                     <div class="col-md-10">
                     {{ csrf_field() }}
-                   <input type="submit" class="btn btn-secondary" value="作成">
+                   <input type="submit" class="btn btn-primary" value="作成">
                     </div>
                 </div>
             </form>
