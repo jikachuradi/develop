@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Register;
+
 use Illuminate\Support\Facades\Auth;
 
 class WelcomeController extends Controller
@@ -13,22 +15,23 @@ class WelcomeController extends Controller
   {
       //ユーザーAuthで取得
       $user_id = Auth::id();
-      logger($user_id)
+      logger($user_id);
       //リスト全て取得
-      $list = Register::all();
+      /*$list = Register::all();*/
       //誕生日取り出し   
-      $birthday = Register::where($request->birthday)->get();
-　　　//記念日取り出し
-　　　$anniversary = Register::where($request->anniversary)->get();
-　　　//名前取り出し      
-      $name =  Register::where($request->name)->get();
+      $birthday = Register::find($request->birthday);
+      //記念日取り出し
+      $anniversary = Register::where($request->anniversary);
+      //名前取り出し      
+      $name =  Register::where($request->name);
       //本日であれば表示させる(if) 
-      if($today = date("Y-m-d")){
-        $posts = Register::where('birthday', $today)->get();
-      } else {
-        $posts = Register::where('anniversary', $today)->get();
-      }
-
-      return redirect('admin/welcome/' , ['today' => $today,'birthday' => $birthday,'anniversary' => $anniversary,'name' => $name]);
-  }  
+      $today = date("Y/m/d");
+      /*if(strtotime($today) === strtotime($birthday)){
+        echo "本日は誕生日です";
+      }else if(strtotime($today) === strtotime($anniversary)){
+        echo "本日は記念日です";
+      }else{
+      }*/
+      return view('/welcome',['user_id' => $user_id,'today' => $today,'birthday' => $birthday]);
+  }
 }

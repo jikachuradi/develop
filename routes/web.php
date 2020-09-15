@@ -15,7 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home','HomeController@index')->name('home');
+Route::get('/home', function () {
+    return view('welcome');
+});
+
+Route::get('/', 'Admin\WelcomeController@notice');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     //register リスト
@@ -42,8 +46,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     //メッセージカード作成用
     Route::post('template/aaa', 'Admin\TemplateController@card_create');
     Route::post('template/bbb', 'Admin\TemplateController@mb_wordwrape');
-    
-    Route::get('welcome', 'Admin\WelcomeController@notice');
     
     Route::get('template/delete', 'Admin\TemplateController@delete');
 });

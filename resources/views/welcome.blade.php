@@ -101,7 +101,7 @@
                     <div class="sub-title m-b-md-2">- Birth × Card -</div>
                     
                  <form action="{{ action('Admin\WelcomeController@notice') }}" method="get">
-                            <div class="text notice">今日は{{$today->today}} {{$name->name}}さんの{{$birthday->birthday}}日です！</div>
+                            <div class="text notice">今日は{{$today}} {$name->name}さん{$birthday}日です！</div>
                  </form>
 
                             <a class="btn btn-primary" href="{{url('/admin/register/create')}}" ><span class="fa fa-user-plus"></span>リスト登録</a>
