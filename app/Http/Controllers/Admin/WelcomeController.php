@@ -15,23 +15,27 @@ class WelcomeController extends Controller
   {
       //ユーザーAuthで取得
       $user_id = Auth::id();
-      logger($user_id);
       //リスト全て取得
-      /*$list = Register::all();*/
-      //誕生日取り出し   
-      $birthday = Register::find($request->birthday);
+      $list = Register::all();
+      logger($list);
+      //誕生日取り出し
+      $birthday = Register::select('birthday')->get();
+      logger($birthday);
       //記念日取り出し
-      $anniversary = Register::where($request->anniversary);
-      //名前取り出し      
-      $name =  Register::where($request->name);
-      //本日であれば表示させる(if) 
-      $today = date("Y/m/d");
-      /*if(strtotime($today) === strtotime($birthday)){
-        echo "本日は誕生日です";
-      }else if(strtotime($today) === strtotime($anniversary)){
-        echo "本日は記念日です";
+      $anniversary = Register::select('anniversary')->get();
+      logger($anniversary); 
+
+      $today = date("m月d日");//年月日ではなく月日での検索可能か（もしくはリスト入力内容を変えてしまう）
+      
+      //誕生日が本日であれば表示させる(if) 
+      if(strtotime($birthday) == strtotime($today)){
+      //名前取り出し
+      $name = Register::select('name')->get();
+      logger($name); 
+      /*}else if(strtotime($anniversary) === strtotime($today)){*/
       }else{
-      }*/
-      return view('/welcome',['user_id' => $user_id,'today' => $today,'birthday' => $birthday]);
+      }
+      
+      return view('/welcome',['today' => $today,'name' => $name]);
   }
 }
