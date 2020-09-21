@@ -100,10 +100,12 @@
                     <div class="title m-b-md">Bird</div>
                     <div class="sub-title m-b-md-2">- Birth × Card -</div>
                     
+                         @foreach($name as $na)
                  <form action="{{ action('Admin\WelcomeController@notice') }}" method="get">
-                            <div class="text notice">今日は{{$today}} {{$name}}さんの誕生日です！</div>
+                            <div class="text notice">今日は{{$today}} {{$na->name}}さんの誕生日です！</div>
                  </form>
-
+                        @endforeach
+                        
                             <a class="btn btn-primary" href="{{url('/admin/register/create')}}" ><span class="fa fa-user-plus"></span>リスト登録</a>
                             <a class="btn btn-primary" href="{{url('/admin/register')}}" ><span class="fa fa-list"></span>リスト一覧</a>
                             <a class="btn btn-primary" href="{{url('/admin/template')}}" ><span class="fa fa-square"></span>メッセージカード作成</a>
@@ -111,7 +113,6 @@
                         <div><img src="{{ asset('storage/image/main.jpg')}}"></div>
                     </div>
                 </div>
-                
             <main class="py-4">
                 @yield('content')
             </main>

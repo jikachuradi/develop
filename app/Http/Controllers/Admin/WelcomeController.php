@@ -33,9 +33,8 @@ class WelcomeController extends Controller
       $name = Register::select('name')->get();
       logger($name); 
       /*}else if(strtotime($anniversary) === strtotime($today)){*/
-      }else{
+      } else {
       }
-      
       return view('/welcome',['today' => $today,'name' => $name]);
   }
 }
