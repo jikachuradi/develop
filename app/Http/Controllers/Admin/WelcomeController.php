@@ -16,25 +16,26 @@ class WelcomeController extends Controller
       //ユーザーAuthで取得
       $user_id = Auth::id();
       //リスト全て取得
-      $list = Register::all();
-      logger($list);
-      //誕生日取り出し
-      $birthday = Register::select('birthday')->get();
-      logger($birthday);
-      //記念日取り出し
-      $anniversary = Register::select('anniversary')->get();
-      logger($anniversary); 
-
-      $today = date("Y-m-d");//年月日ではなく月日での検索可能か（もしくはリスト入力内容を変えてしまう）
+      $listDatas = Register::get();
       
-      //誕生日が本日であれば表示させる(if) 
-      if(strtotime($birthday) == strtotime($today)){
-      //名前取り出し
-      $name = Register::select('name')->get();
-      logger($name); 
-      /*}else if(strtotime($anniversary) === strtotime($today)){*/
-      } else {
+      $today = date("m-d");//年月日ではなく月日での検索可能か（もしくはリスト入力内容を変えてしまう）
+      logger($today);
+      
+      $namesArray = []; //空の配列
+      $anniversaryArray = []; //空の配列
+      foreach($listDatas as $data){
+        $birthday = substr($data['birthday'], 5);
+        logger($birthday);
+        if($birthday == $today){
+          logger($data['name']);
+          array_push($namesArray,$data['name']);
+          $anniversary = substr($data['anniversary'], 5);
+        if($anniversary == $today){
+          array_push($anniversaryArray,$data['name']);
       }
-      return view('/welcome',['today' => $today,'name' => $name]);
+      }
+     }
+
+      return view('/welcome',['today' => $today,'name' => $namesArray,'anniversaryName' =>$anniversaryArray]);
   }
 }

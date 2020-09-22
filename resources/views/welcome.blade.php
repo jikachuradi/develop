@@ -100,10 +100,12 @@
                     <div class="title m-b-md">Bird</div>
                     <div class="sub-title m-b-md-2">- Birth × Card -</div>
                     
-                         @foreach($name as $na)
-                 <form action="{{ action('Admin\WelcomeController@notice') }}" method="get">
-                            <div class="text notice">今日は{{$today}} {{$na->name}}さんの誕生日です！</div>
-                 </form>
+                        @foreach($name as $na)
+                            <div class="text notice">今日は{{$today}} {{$na}}さんの誕生日です！</div>
+                        @endforeach
+                        
+                        @foreach($anniversaryName as $na)
+                            <div class="text notice">今日は{{$today}} {{$na}}さんとの記念日です！</div>
                         @endforeach
                         
                             <a class="btn btn-primary" href="{{url('/admin/register/create')}}" ><span class="fa fa-user-plus"></span>リスト登録</a>
