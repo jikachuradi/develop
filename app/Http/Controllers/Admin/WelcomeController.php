@@ -25,7 +25,7 @@ class WelcomeController extends Controller
       $anniversary = Register::select('anniversary')->get();
       logger($anniversary); 
 
-      $today = date("m月d日");//年月日ではなく月日での検索可能か（もしくはリスト入力内容を変えてしまう）
+      $today = date("Y-m-d");//年月日ではなく月日での検索可能か（もしくはリスト入力内容を変えてしまう）
       
       //誕生日が本日であれば表示させる(if) 
       if(strtotime($birthday) == strtotime($today)){
