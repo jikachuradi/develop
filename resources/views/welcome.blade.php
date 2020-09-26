@@ -32,7 +32,7 @@
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <div class="container">
-                    <div class="navbar-brand" href="{{ url('/') }}">
+                    <div class="navbar-brand" style="color:#636b6f;" href="{{ url('/') }}">
                     Bird - Birth × Card -
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

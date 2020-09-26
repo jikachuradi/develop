@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .body {
   background-color: #fff;
 }
@@ -65,5 +67,54 @@ img {
   color: #636b6f;
   text-align: center;
   margin-top: 10px;
+}
+
+@media screen and (max-width: 959px) {
+  /* 959px以下に適用されるCSS（タブレット用） */
+}
+
+@media screen and (max-width: 480px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+
+  .content {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .title {
+    color: #428bca;
+    font-size: 42px;
+  }
+
+  .sub-title {
+    color: #636b6f;
+    font-size: 18px;
+  }
+
+  .text {
+    color: #636b6f;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .m-b-md-2 {
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    font-size: 80%;
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .btn + .btn {
+    margin-left: 0;
+  }
+
+  .footer {
+    background-color: #87CEEB;
+    color: #636b6f;
+    text-align: center;
+  }
 }
 
