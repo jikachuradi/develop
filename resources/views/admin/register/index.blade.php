@@ -31,7 +31,7 @@
                  <table class="table">
                      <thead>
                          <tr>
-                             <th width="20%">写真</th>
+                             <th width="20%">画像</th>
                              <th width="15%">名前</th>
                              <th width="12%">誕生日</th>
                              <th width="12%">記念日</th>

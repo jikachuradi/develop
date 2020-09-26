@@ -44,7 +44,7 @@
                     <div class="col-md-10">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="group"  value="家族">
-                  <label class="form-check-label">パートナー</label>
+                  <label class="form-check-label" for="partner">パートナー</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="group"  value="家族">
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">写真</label>
+                        <label class="col-md-2">画像</label>
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
                         </div>

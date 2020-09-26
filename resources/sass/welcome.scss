@@ -3,22 +3,22 @@
 }
 
 .content {
-  margin-top: 150px;
+  margin-top: 30px;
   text-align: center;
   }
-  
+
 .navbar-brand{
   color: #636b6f;
 }
 
 .title {
-  color: #0099ff;
+  color: #428bca;
   font-size: 84px;
   }
   
 .sub-title {
   color: #636b6f;
-  font-size: 40px;
+  font-size: 30px;
   }
   
 .text{
@@ -46,17 +46,23 @@
 }
 
 .btn{
-  margin-bottom: 80px;
+  margin-bottom: 50px;
   padding: 10px 15px;
 }
 
 .btn + .btn {
     margin-left: 1rem;
 }
+
+img {
+width: 100%;
+max-width: 700px;
+height: auto;
+}
             
 .footer{
-  background-color: #eeffff;
+  background-color: #87CEEB;
   color: #636b6f;
-  text-align:center;
-  margin-top: 30px;
+  text-align: center;
+  margin-top: 10px;
 }

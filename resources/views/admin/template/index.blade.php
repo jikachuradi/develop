@@ -35,7 +35,7 @@
                      <tbody>
                          <tr>
                             <td>
-                                <img src="{{ asset('storage/image/template/1.jpg')}}">
+                                <img src="{{ asset('storage/image/template/1.jpg')}}" class="img">
                             </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
@@ -45,7 +45,7 @@
                          </tr>
                          <tr>
                             <td>
-                                <img src="{{ asset('storage/image/template/2.jpg')}}">
+                                <img src="{{ asset('storage/image/template/2.jpg')}}" class="img">
                              </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
@@ -55,7 +55,7 @@
                          </tr>
                          <tr>
                             <td>
-                                <img src="{{ asset('storage/image/template/3.jpg')}}">
+                                <img src="{{ asset('storage/image/template/3.jpg')}}" class="img">
                              </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
@@ -65,7 +65,7 @@
                          </tr>
                          <tr>
                             <td>
-                                <img src="{{ asset('storage/image/template/4.jpg')}}">
+                                <img src="{{ asset('storage/image/template/4.jpg')}}" class="img">
                              </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
@@ -75,7 +75,7 @@
                          </tr>
                          <tr>
                             <td>
-                                <img src="{{ asset('storage/image/template/5.jpg')}}">
+                                <img src="{{ asset('storage/image/template/5.jpg')}}" class="img">
                              </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
@@ -85,7 +85,7 @@
                          </tr>
                          <tr>
                             <td>
-                                <img src="{{ asset('storage/image/template/spring.jpg')}}">
+                                <img src="{{ asset('storage/image/template/spring.jpg')}}" class="img">
                              </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
@@ -95,7 +95,7 @@
                          </tr>
                          <tr>
                             <td>
-                                <img src="{{ asset('storage/image/template/summer.jpg')}}">
+                                <img src="{{ asset('storage/image/template/summer.jpg')}}" class="img">
                              </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
@@ -105,7 +105,7 @@
                          </tr>
                          <tr>
                             <td>
-                                <img src="{{ asset('storage/image/template/autumn.jpg')}}">
+                                <img src="{{ asset('storage/image/template/autumn.jpg')}}" class="img">
                              </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
@@ -115,7 +115,7 @@
                          </tr>
                          <tr>
                             <td>
-                                <img src="{{ asset('storage/image/template/winter.jpg')}}">
+                                <img src="{{ asset('storage/image/template/winter.jpg')}}" class="img">
                              </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   

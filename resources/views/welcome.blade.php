@@ -97,6 +97,7 @@
                 </div>
             </nav>
                 <div class="content">
+                    {{-- タイトルとサブタイトル --}}
                     <div class="title m-b-md">Bird</div>
                     <div class="sub-title m-b-md-2">- Birth × Card -</div>
                     

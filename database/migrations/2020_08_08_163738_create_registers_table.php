@@ -19,7 +19,7 @@ class CreateRegistersTable extends Migration
             $table->date('birthday'); 
             $table->date('anniversary'); 
             $table->string('group'); 
-            $table->string('memo'); 
+            $table->string('memo') ->nullable();
             $table->string('image_path')->nullable(); // 画像のパスを保存するカラム
             $table->timestamps();
         });

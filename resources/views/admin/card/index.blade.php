@@ -32,19 +32,19 @@
                  <table class="table">
                      <thead>
                          <tr>
-                             <th width="75%">メッセージカード </th>
-                             <th width="20%">メッセージカード削除</th>
+                             <th width="80%">メッセージカード </th>
+                             <th width="20%">削除</th>
                          </tr>
                      </thead>
                      <tbody>
                          @foreach($cards as $card)
                          <tr>
                              <td>
-                             <img src="{{ asset($card)}}" name="">
+                             <img src="{{ asset($card)}}" class="img">
                              </td>
                             <td>
                                 <div>
-                                    <a href="{{ action('Admin\CardController@delete',['card' => $card])}}">メッセージカード削除</a>
+                                    <a href="{{ action('Admin\CardController@delete',['card' => $card])}}">削除</a>
                                 </div>
                              </td>
                         </tr>

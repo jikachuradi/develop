@@ -40,8 +40,31 @@ body {
   background-color: rgba(0, 0, 0, 0);
 }
 
+.img{
+  width:  100%;
+}
+
 .footer{
-  background-color: #c0c0c0;
+  background-color: #87CEEB;
   color: #fff;
   text-align:center;
+}
+
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+
+}
+
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+.btn{
+  font-size: 12px;
+  width: auto;
+}	
+
+.table{
+  color: #636b6f;
+  font-size: 10px;
+  max-width: 100%;
+}
 }
