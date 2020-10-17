@@ -79,10 +79,10 @@ public function index(Request $request)
         $image='storage/image/template/winter.jpg';  
       }
       
-      $template= new Template;
+      $template = new Template;
       $path = $image;
       $template->image_path = basename($path);
-
+      
       return view('admin.template.edit', ['template_form' => $template]);
       }
   
@@ -105,15 +105,15 @@ public function index(Request $request)
         */
 
         //長めの文章を指定文字数で分割する
-        $max_len = 50; //少なく設定すると変な箇所で改行されてしまうので要検討
+        $max_len = 100; //少なく設定すると変な箇所で改行されてしまうので要検討
         $lines = self::mb_wordwrap($template_form['messes'], $max_len);
 
         //テキストを画像に表示させる
-        $card_img->text($lines, 390, 300, function($font) {
+        $card_img->text($lines, 390, 325, function($font) {
             $font->file(storage_path('app/fonts/GenShinGothic-Heavy.ttf'));
             $font->size(20);
             $font->align('center');
-            $font->color('#ff0000');
+            $font->color('#000000');
         });
 
         //storageに保存する

@@ -39,23 +39,24 @@
                     <label class="col-md-2" for="group">グループ</label>
                     <div class="col-md-10">
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="group"  value="パートナー">
+                    <!-- 「{{」 以降、 三項演算子「条件式 ? 式1 : 式2」TRUEであれば式1、FALSEであれば式2を返す-->
+                  <input class="form-check-input" type="radio" name="group"  value="パートナー" {{ $register_form->group == "パートナー" ? 'checked="checked"' : ''}}>
                   <label class="form-check-label">パートナー</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="group"  value="家族">
+                  <input class="form-check-input" type="radio" name="group"  value="家族" {{ $register_form->group == "家族" ? 'checked="checked"' : ''}}>
                   <label class="form-check-label">家族</label>
                 </div>
                   <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="group"  value="友人">
+                  <input class="form-check-input" type="radio" name="group"  value="友人" {{ $register_form->group == "友人" ? 'checked="checked"' : ''}}>
                   <label class="form-check-label">友人</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="group"  value="職場">
+                  <input class="form-check-input" type="radio" name="group"  value="職場"  {{ $register_form->group == "職場" ? 'checked="checked"' : ''}}>
                   <label class="form-check-label">職場</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="group"  value="その他">
+                  <input class="form-check-input" type="radio" name="group"  value="その他"  {{ $register_form->group == "その他" ? 'checked="checked"' : ''}}>
                   <label class="form-check-label">その他</label>
                 </div>
                 </div>  
@@ -63,7 +64,7 @@
                 <div class="form-group row">
                     <label class="col-md-2">メモ</label>
                     <div class="col-md-10">
-                            <textarea class="form-control" name="memo" rows="20">{{$register_form->memo }}</textarea>
+                            <textarea class="form-control" name="memo" rows="20" >{{ $register_form->memo }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -82,7 +83,8 @@
                     </div>
                      <div class="form-group row">
                     <div class="col-md-10">
-                        <input type="hidden" name="id" value="{{ $register_form->id }}">                        {{ csrf_field() }}
+                        <input type="hidden" name="id" value="{{ $register_form->id }}">                        
+                        {{ csrf_field() }}
                    <input type="submit" class="btn btn-primary" value="更新">
                     </div>
                 </div>

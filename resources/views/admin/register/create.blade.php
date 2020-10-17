@@ -43,7 +43,7 @@
                     <label class="col-md-2" for="group">グループ</label>
                     <div class="col-md-10">
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="group"  value="家族">
+                  <input class="form-check-input" type="radio" name="group"  value="パートナー">
                   <label class="form-check-label" for="partner">パートナー</label>
                 </div>
                 <div class="form-check form-check-inline">

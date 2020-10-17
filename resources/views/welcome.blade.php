@@ -2,39 +2,39 @@
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
+        <!-- windowsの基本ブラウザであるedgeに対応するという記載 -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-         {{-- 画面幅を小さくしたときに文字や画像の大きさを調整 --}}
+         <!-- 画面幅を小さくしたときに文字や画像の大きさを調整 -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- CSRF Token -->
+        <!-- CSRF Token（CSRF攻撃に対する対策） -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>Bird - Birth × Card -</title>
 
         <!-- Scripts -->
-         {{-- Laravel標準で用意されているJavascriptを読み込み --}}
+        <!-- Laravel標準で用意されているJavascriptを読み込み -->
         <script src="{{ secure_asset('js/app.js') }}" defer></script>
 
-        <!-- Fonts -->
+        <!-- Fonts（フォント）-->
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-        {{-- Laravel標準で用意されているCSSを読み込み --}}
+        <!-- Laravel標準で用意されているCSSを読み込み -->
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-        {{-- CSSを読み込み --}}
+        <!-- CSSを読み込み -->
         <link href="{{ secure_asset('css/welcome.css') }}" rel="stylesheet">
-        {{-- font-awesomeを読み込み --}}
+        <!-- font-awesome(フォントとアイコンのツールキット)を読み込み -->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     </head>
     
     <body class="body">
         <div id="app">
+            <!-- ナビゲーションバー-->
             <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <div class="container">
-                    <div class="navbar-brand" style="color:#636b6f;" href="{{ url('/') }}">
-                    Bird - Birth × Card -
-                    </div>
+                    <div class="navbar-brand" style="color:#636b6f;" href="{{ url('/') }}">Bird - Birth × Card -</div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -44,9 +44,9 @@
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
 
-                        <!-- Authentication Links -->
-                        {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
-                        @guest
+                        <!-- Authentication Links(認証リンク) -->
+                        <!-- ログインしていなかったらログイン画面へのリンクを表示 -->
+                        @guest 
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('messages.Login') }}</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('messages.Register') }}</a></li>
                         </ul>
@@ -66,7 +66,7 @@
             <main class="py-4"></main>
         </div>
     </body>
-    <footer class="footer">©️2020  List of Celebrations </footer>
+    <footer class="footer">©️2020 Bird - Birth × Card </footer>
     
                 {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
                         @else

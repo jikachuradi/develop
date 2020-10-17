@@ -29,9 +29,12 @@
                         </div>
                     </div>
                 　　<div class="form-group row">
-                    <label class="col-md-2" for="messes">メッセージ</label>
+                    <label class="col-md-2" for="message">メッセージ</label>
                     <div class="col-md-10">
-                        <textarea name="messes" class="form-control" cols='10' rows="10" maxlength="100">{{$template_form->messes}}</textarea>
+<textarea name="message" class="form-control-message" cols='10' rows="10" maxlength="100">
+○○へ
+お誕生日おめでとう！
+素敵な１年になりますように★</textarea>
                     </div>
                 　　</div>
                     <div class="form-group row">
