@@ -34,7 +34,7 @@
             <!-- ナビゲーションバー-->
             <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <div class="container">
-                    <div class="navbar-brand" style="color:#636b6f;" href="{{ url('/') }}">Bird - Birth × Card -</div>
+                    <a class="navbar-brand" style="color:#636b6f;" href="{{ url('/') }}">Bird - Birth × Card -</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -68,14 +68,12 @@
         </div>
     </body>
     <footer class="footer">©️2020 Bird - Birth × Card </footer>
-    
-                {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
+                <!-- ログインしていたらユーザー名とログアウトボタンを表示 -->
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} {{ __('’s MENU')}} <span class="caret"></span>
                                 </a>
-
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{url('/')}}">TOP</a>
                                     <a class="dropdown-item" href="{{url('/admin/register/create')}}">リスト登録</a>
@@ -84,7 +82,7 @@
                                     <a class="dropdown-item" href="{{url('/admin/card')}}">メッセージカード一覧</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                     document.getElementById('logout-form').submit();"><!-- logout -->
                                         {{ __('messages.Logout') }}
                                     </a>
 
@@ -98,10 +96,10 @@
                 </div>
             </nav>
                 <div class="content">
-                    {{-- タイトルとサブタイトル --}}
+                    <!-- タイトルとサブタイトル -->
                     <div class="title m-b-md">Bird</div>
                     <div class="sub-title m-b-md-2">- Birth × Card -</div>
-                    
+                    <!--通知-->
                         @foreach($name as $na)
                             <div class="text notice">今日は{{$today}} {{$na}}さんの誕生日です！</div>
                         @endforeach
@@ -109,12 +107,12 @@
                         @foreach($anniversaryName as $na)
                             <div class="text notice">今日は{{$today}} {{$na}}さんとの記念日です！</div>
                         @endforeach
-                        
+                            <!--ボタン-->
                             <a class="btn btn-primary" href="{{url('/admin/register/create')}}" ><span class="fa fa-user-plus"></span>リスト登録</a>
                             <a class="btn btn-primary" href="{{url('/admin/register')}}" ><span class="fa fa-list"></span>リスト一覧</a>
                             <a class="btn btn-primary" href="{{url('/admin/template')}}" ><span class="fa fa-square"></span>メッセージカード作成</a>
                             <a class="btn btn-primary" href="{{url('/admin/card')}}" ><span class="fa fa-th-list"></span>メッセージカード一覧</a>
-                        <div><img src="{{ asset('storage/image/main.jpg')}}"></div>
+                        <div><img src="{{ asset('storage/image/main.jpg')}}"></div><!--メイン画像-->
                     </div>
                 </div>
             <main class="py-4">

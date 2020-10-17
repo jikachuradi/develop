@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;//ユーザーAuthで取得
 
 class WelcomeController extends Controller
 {
-  public function notice(Request $request)
+  public function notice(Request $request)//通知
   {
       //本日の日付取得
       $today = date("m-d");//年月日ではなく月日での一致とする
@@ -23,8 +23,8 @@ class WelcomeController extends Controller
       $listDatas = Register::where('user_id',Auth::user()->id)->get();
         foreach($listDatas as $data){//リスト全てをforeachで配列する
           $birthday = substr($data['birthday'], 5);//「substr」「5」2020-09-22の年（2020-）を除き、月日以降（09-22）
-            if($birthday == $today){
-              array_push($namesArray,$data['name']);
+            if($birthday == $today){ //本日と一致したら
+              array_push($namesArray,$data['name']);//array_push — 一つ以上の要素を配列の最後に追加する
               $anniversary = substr($data['anniversary'], 5);
               if($anniversary == $today){
                 array_push($anniversaryArray,$data['name']);
@@ -34,7 +34,6 @@ class WelcomeController extends Controller
       } else { //ログインしていなければ非表示
       $listDatas = null ;
       }
-      
     return view('/welcome',['today' => $today,'name' => $namesArray,'anniversaryName' =>$anniversaryArray]);
   }
 }
