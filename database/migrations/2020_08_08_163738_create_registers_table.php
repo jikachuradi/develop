@@ -18,7 +18,7 @@ class CreateRegistersTable extends Migration
             $table->integer('user_id');
             $table->string('name'); 
             $table->date('birthday'); 
-            $table->date('anniversary'); 
+            $table->date('anniversary');
             $table->string('group'); 
             $table->string('memo') ->nullable();
             $table->string('image_path')->nullable(); // 画像のパスを保存するカラム

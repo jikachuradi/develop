@@ -56,10 +56,11 @@
                 <div class="content">
                     <div class="title m-b-md">Bird</div>
                          <div class="sub-title m-b-md-2">- Birth × Card -</div>
-                                <a class="btn btn-primary" href="{{ route('login') }}" ><span class="fa fa-user-plus"></span>リスト登録</a>
-                                <a class="btn btn-primary" href="{{ route('login') }}" ><span class="fa fa-list"></span>リスト一覧</a>
-                                <a class="btn btn-primary" href="{{ route('login') }}" ><span class="fa fa-square"></span>メッセージカード作成</a>
-                                <a class="btn btn-primary" href="{{ route('login') }}" ><span class="fa fa-th-list"></span>メッセージカード一覧</a>
+                            <!--ログインしていなかったらどのボタンを押してもログイン画面へ-->
+                            <a class="btn btn-primary" href="{{ route('login') }}" ><span class="fa fa-user-plus"></span>リスト登録</a>
+                            <a class="btn btn-primary" href="{{ route('login') }}" ><span class="fa fa-list"></span>リスト一覧</a>
+                            <a class="btn btn-primary" href="{{ route('login') }}" ><span class="fa fa-square"></span>メッセージカード作成</a>
+                            <a class="btn btn-primary" href="{{ route('login') }}" ><span class="fa fa-th-list"></span>メッセージカード一覧</a>
                         <div><img src="{{ asset('storage/image/main.jpg')}}"></div>
                     </div>
                 </div>
