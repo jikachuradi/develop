@@ -20,20 +20,20 @@ class WelcomeController extends Controller
       $anniversaryArray = []; //空の配列
 
       if($user = Auth::user()){ //ログインしていたら誕生日・記念日を通知
-      $listDatas = Register::where('user_id',Auth::user()->id)->get();
-        foreach($listDatas as $data){//リスト全てをforeachで配列する
-          $birthday = substr($data['birthday'], 5);//「substr」「5」2020-09-22の年（2020-）を除き、月日以降（09-22）
+        $listDatas = Register::where('user_id',Auth::user()->id)->get();
+          foreach($listDatas as $data){//リスト全てをforeachで配列する
+            $birthday = substr($data['birthday'], 5);//「substr」「5」2020-09-22の年（2020-）を除き、月日以降（09-22）
+            $anniversary = substr($data['anniversary'], 5);
             if($birthday == $today){ //本日と一致したら
               array_push($namesArray,$data['name']);//array_push — 一つ以上の要素を配列の最後に追加する
-              $anniversary = substr($data['anniversary'], 5);
-              if($anniversary == $today){
-                array_push($anniversaryArray,$data['name']);
-              }
+            }if($anniversary == $today){
+              array_push($anniversaryArray,$data['name']);
             }
-        } 
+          }
       } else { //ログインしていなければ非表示
-      $listDatas = null ;
+        $listDatas = null ;
       }
+      
     return view('/welcome',['today' => $today,'name' => $namesArray,'anniversaryName' =>$anniversaryArray]);
   }
 }

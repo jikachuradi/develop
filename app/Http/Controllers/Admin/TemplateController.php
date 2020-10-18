@@ -106,7 +106,7 @@ public function index(Request $request)
 
         //長めの文章を指定文字数で分割する
         $max_len = 100; //少なく設定すると変な箇所で改行されてしまうので要検討
-        $lines = self::mb_wordwrap($template_form['messes'], $max_len);
+        $lines = self::mb_wordwrap($template_form['message'], $max_len);
 
         //テキストを画像に表示させる
         $card_img->text($lines, 390, 325, function($font) {

@@ -31,7 +31,7 @@
                 　　<div class="form-group row">
                     <label class="col-md-2" for="message">メッセージ</label>
                     <div class="col-md-10">
-<textarea name="message" class="form-control-message" cols='10' rows="10" maxlength="100">
+<textarea name="message" class="form-control-message" cols='50' rows="5" maxlength="100">
 ○○へ
 お誕生日おめでとう！
 素敵な１年になりますように★</textarea>

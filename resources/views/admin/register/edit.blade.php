@@ -39,7 +39,7 @@
                     <label class="col-md-2" for="group">グループ</label>
                     <div class="col-md-10">
                 <div class="form-check form-check-inline">
-                    <!-- 「{{」 以降、 三項演算子「条件式 ? 式1 : 式2」TRUEであれば式1、FALSEであれば式2を返す-->
+                    <!-- 三項演算子「条件式 ? 式1 : 式2」TRUEであれば式1、FALSEであれば式2を返す-->
                   <input class="form-check-input" type="radio" name="group"  value="パートナー" {{ $register_form->group == "パートナー" ? 'checked="checked"' : ''}}>
                   <label class="form-check-label">パートナー</label>
                 </div>
