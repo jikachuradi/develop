@@ -6,8 +6,8 @@ body {
 }
 
 h2{
-  color: #636b6f;
   margin-bottom: 20px;
+  color: #636b6f;
 }
 
 .table{
@@ -20,28 +20,24 @@ h2{
 }
 
 .form-group{
-  color: #636b6f;
   margin-top: 30px;
+  color: #636b6f;
 }
 
 .img{
-  width:  100%;
+  width: 100%;
 }
 
 .footer{
+  text-align: center;
+  margin-top: 30px;
   background-color: #87CEEB;
   color: #636b6f;
-  text-align:center;
-  margin-top: 30px;
-}
-
-@media screen and (max-width: 959px) {
-	/* 959px以下に適用されるCSS（タブレット用） */
 
 }
 
 @media screen and (max-width: 480px) {
-	/* 480px以下に適用されるCSS（スマホ用） */
+/* 480px以下に適用されるCSS（スマホ用） */
 .btn{
   font-size: 10px;
 }	
@@ -52,9 +48,9 @@ h2{
 }
 
 .table{
+  max-width: 100%;
   color: #636b6f;
   font-size: 10px;
-  max-width: 100%;
 }
 
 }

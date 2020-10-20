@@ -8,8 +8,8 @@ body {
 }
 
 h2 {
-  color: #636b6f;
   margin-bottom: 20px;
+  color: #636b6f;
 }
 
 .form-group {
@@ -58,10 +58,10 @@ h2 {
 }
 
 .footer {
-  background-color: #87CEEB;
-  color: #636b6f;
   text-align: center;
   margin-top: 30px;
+  background-color: #87CEEB;
+  color: #636b6f;
 }
 
 @media screen and (max-width: 959px) {
@@ -78,8 +78,8 @@ h2 {
   /* 480px以下に適用されるCSS（スマホ用） */
 
   .btn {
-    font-size: 12px;
     width: auto;
+    font-size: 12px;
   }
 
   .form-control {
@@ -88,9 +88,9 @@ h2 {
   }
 
   .table {
-    color: #636b6f;
-    font-size: 10px;
     max-width: 100%;
+    font-size: 10px;
+    color: #636b6f;
   }
 
   .img {

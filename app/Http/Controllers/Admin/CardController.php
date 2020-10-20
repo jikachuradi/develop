@@ -11,15 +11,14 @@ use Illuminate\Support\Facades\Auth;
 
 class CardController extends Controller
 {
-  
+
   public function add()
   {
-      return view('admin.card.create');
+    return view('admin.card.create');
   }
   
   public function create(Request $request)
   {
-    
     $this->validate($request, Card::$rules);
       $card= new Card;
       $form = $request->all();
@@ -40,13 +39,12 @@ class CardController extends Controller
       return redirect('admin/card/');
   }
 
-public function index(Request $request)
-{
+  public function index(Request $request)
+  {
       $user_id = Auth::id();
       $cards = glob('storage/image/'.$user_id.'/*'); //publicから抽出（配列のため（ワイルドカード））
-
       return view('admin.card.index',['cards' => $cards]);
-}
+  }
 
   public function edit(Request $request)
   {
@@ -57,7 +55,6 @@ public function index(Request $request)
       }
       return view('admin.card.edit', ['card_form' => $card]);
   }
-
 
   public function update(Request $request)
   {

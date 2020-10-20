@@ -54,7 +54,7 @@ class RegisterController extends Controller
         //それ以外はすべて取得する
         $posts = Register::where('user_id',Auth::user()->id)->get();
         }
-    return view('admin.register.index', ['user'=>$user, 'posts' => $posts, 'cond_name' => $cond_name]);
+      return view('admin.register.index', ['user'=>$user, 'posts' => $posts, 'cond_name' => $cond_name]);
   }
 
   public function edit(Request $request)
@@ -95,10 +95,10 @@ class RegisterController extends Controller
 
   public function delete(Request $request)
   {
-      // 該当するRegister Modelを取得
-      $register = Register::find($request->id);
-      // 削除する
-      $register->delete();
-      return redirect('admin/register/');
+    // 該当するRegister Modelを取得
+    $register = Register::find($request->id);
+    // 削除する
+    $register->delete();
+    return redirect('admin/register/');
   }  
 }

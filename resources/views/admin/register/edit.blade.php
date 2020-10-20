@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>リスト編集</h2>
-                                <form action="{{ action('Admin\RegisterController@update') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ action('Admin\RegisterController@update') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                     <ul>
                         @foreach($errors->all() as $e)
@@ -38,58 +38,57 @@
                 <div class="form-group row">
                     <label class="col-md-2" for="group">グループ</label>
                     <div class="col-md-10">
-                <div class="form-check form-check-inline">
-                    <!-- 三項演算子「条件式 ? 式1 : 式2」TRUEであれば式1、FALSEであれば式2を返す-->
-                  <input class="form-check-input" type="radio" name="group"  value="パートナー" {{ $register_form->group == "パートナー" ? 'checked="checked"' : ''}}>
-                  <label class="form-check-label">パートナー</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="group"  value="家族" {{ $register_form->group == "家族" ? 'checked="checked"' : ''}}>
-                  <label class="form-check-label">家族</label>
-                </div>
-                  <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="group"  value="友人" {{ $register_form->group == "友人" ? 'checked="checked"' : ''}}>
-                  <label class="form-check-label">友人</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="group"  value="職場"  {{ $register_form->group == "職場" ? 'checked="checked"' : ''}}>
-                  <label class="form-check-label">職場</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="group"  value="その他"  {{ $register_form->group == "その他" ? 'checked="checked"' : ''}}>
-                  <label class="form-check-label">その他</label>
-                </div>
-                </div>  
+                        <div class="form-check form-check-inline">
+                        <!-- 三項演算子「条件式 ? 式1 : 式2」TRUEであれば式1、FALSEであれば式2を返す-->
+                            <input class="form-check-input" type="radio" name="group"  value="パートナー" {{ $register_form->group == "パートナー" ? 'checked="checked"' : ''}}>
+                            <label class="form-check-label">パートナー</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="group"  value="家族" {{ $register_form->group == "家族" ? 'checked="checked"' : ''}}>
+                            <label class="form-check-label">家族</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="group"  value="友人" {{ $register_form->group == "友人" ? 'checked="checked"' : ''}}>
+                            <label class="form-check-label">友人</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="group"  value="職場"  {{ $register_form->group == "職場" ? 'checked="checked"' : ''}}>
+                            <label class="form-check-label">職場</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="group"  value="その他"  {{ $register_form->group == "その他" ? 'checked="checked"' : ''}}>
+                            <label class="form-check-label">その他</label>
+                        </div>
+                    </div>  
                 </div>
                 <div class="form-group row">
                     <label class="col-md-2">メモ</label>
                     <div class="col-md-10">
-                            <textarea class="form-control" name="memo" rows="20" >{{ $register_form->memo }}</textarea>
-                        </div>
+                        <textarea class="form-control" name="memo" rows="20" >{{ $register_form->memo }}</textarea>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-md-2" for="image">画像</label>
-                        <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-2" for="image">画像</label>
+                    <div class="col-md-10">
+                        <input type="file" class="form-control-file" name="image">
                             <div class="form-text text-info">
                                 設定中: {{ $register_form->image_path }}
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="remove" value="true">画像を削除
+                                <input type="checkbox" class="form-check-input" name="remove" value="true">画像を削除
                                 </label>
                             </div>
-                        </div>
                     </div>
-                     <div class="form-group row">
+                </div>
+                <div class="form-group row">
                     <div class="col-md-10">
                         <input type="hidden" name="id" value="{{ $register_form->id }}">                        
                         {{ csrf_field() }}
-                   <input type="submit" class="btn btn-primary" value="更新">
+                        <input type="submit" class="btn btn-primary" value="更新">
                     </div>
                 </div>
             </form>
-
             </div>
         </div>
     </div>

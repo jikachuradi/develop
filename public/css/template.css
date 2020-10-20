@@ -8,8 +8,8 @@ body {
 }
 
 h2 {
-  color: #636b6f;
   margin-bottom: 20px;
+  color: #636b6f;
 }
 
 .table {
@@ -22,8 +22,8 @@ h2 {
 }
 
 .form-group {
-  color: #636b6f;
   margin-top: 30px;
+  color: #636b6f;
 }
 
 .img {
@@ -31,14 +31,10 @@ h2 {
 }
 
 .footer {
-  background-color: #87CEEB;
-  color: #636b6f;
   text-align: center;
   margin-top: 30px;
-}
-
-@media screen and (max-width: 959px) {
-  /* 959px以下に適用されるCSS（タブレット用） */
+  background-color: #87CEEB;
+  color: #636b6f;
 }
 
 @media screen and (max-width: 480px) {
@@ -54,9 +50,9 @@ h2 {
   }
 
   .table {
+    max-width: 100%;
     color: #636b6f;
     font-size: 10px;
-    max-width: 100%;
   }
 }
 

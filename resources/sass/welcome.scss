@@ -22,14 +22,14 @@
   }
   
 .text{
+  margin-bottom: 40px;
   color: #636b6f;
   font-size: 20px;
-  margin-bottom: 40px;
 }
 
 .links > a {
-  color: #636b6f;
   padding: 0 25px;
+  color: #636b6f;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: .1rem;
@@ -51,7 +51,7 @@
 }
 
 .btn + .btn {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 img {
@@ -59,17 +59,12 @@ width: 100%;
 max-width: 700px;
 height: auto;
 }
-            
+
 .footer{
-  background-color: #87CEEB;
-  color: #636b6f;
-  text-align: center;
   margin-top: 10px;
-}
-
-@media screen and (max-width: 959px) {
-	/* 959px以下に適用されるCSS（タブレット用） */
-
+  text-align: center;
+  color: #636b6f;
+  background-color: #87CEEB;
 }
 
 @media screen and (max-width: 480px) {
@@ -90,9 +85,9 @@ height: auto;
   }
   
 .text{
+  margin-bottom: 20px;
   color: #636b6f;
   font-size: 12px;
-  margin-bottom: 20px;
 }
 
 .m-b-md-2{
@@ -100,19 +95,19 @@ height: auto;
 }
 
 .btn{
+  margin-bottom: 20px;
   font-size: 80%;
   width: 80%;
-  margin-bottom: 20px;
 }	
 
 .btn + .btn {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 .footer{
-  background-color: #87CEEB;
-  color: #636b6f;
   text-align: center;
+  color: #636b6f;
+  background-color: #87CEEB;
 }
 
 }

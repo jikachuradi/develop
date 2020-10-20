@@ -47,13 +47,9 @@ body {
 }
 
 .footer {
+  text-align: center;
   background-color: #87CEEB;
   color: #fff;
-  text-align: center;
-}
-
-@media screen and (max-width: 959px) {
-  /* 959px以下に適用されるCSS（タブレット用） */
 }
 
 @media screen and (max-width: 480px) {
@@ -65,9 +61,9 @@ body {
   }
 
   .table {
-    color: #636b6f;
     font-size: 10px;
     max-width: 100%;
+    color: #636b6f;
   }
 }
 
