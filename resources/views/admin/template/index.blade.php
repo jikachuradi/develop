@@ -33,96 +33,18 @@
                          </tr>
                      </thead>
                      <tbody>
+                         @foreach ($templates_infos as $info)
                          <tr>
                             <td>
-                                <img src="{{ asset('storage/image/template/1.jpg')}}" class="img">
+                                <img src="{{ $info['url'] }}" class="img">
                             </td>
                             <td>
                                 <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-primary" name="num" value="template1">
+                                <input type="submit" class="btn btn-primary" name="num" value="{{ $info['name'] }}">
                                 </form>
                             </td>
-                         </tr>
-                         <tr>
-                            <td>
-                                <img src="{{ asset('storage/image/template/2.jpg')}}" class="img">
-                             </td>
-                            <td>
-                                <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-primary" name="num" value="template2">
-                                </form>	
-                            </td>
-                         </tr>
-                         <tr>
-                            <td>
-                                <img src="{{ asset('storage/image/template/3.jpg')}}" class="img">
-                             </td>
-                            <td>
-                                <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-primary" name="num" value="template3">
-                                </form>	
-                            </td>
-                         </tr>
-                         <tr>
-                            <td>
-                                <img src="{{ asset('storage/image/template/4.jpg')}}" class="img">
-                             </td>
-                            <td>
-                                <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-primary" name="num" value="template4">
-                                </form>	
-                            </td>
-                         </tr>
-                         <tr>
-                            <td>
-                                <img src="{{ asset('storage/image/template/5.jpg')}}" class="img">
-                             </td>
-                            <td>
-                                <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-primary" name="num" value="template5">
-                                </form>	
-                            </td>
-                         </tr>
-                         <tr>
-                            <td>
-                                <img src="{{ asset('storage/image/template/spring.jpg')}}" class="img">
-                             </td>
-                            <td>
-                                <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-primary" name="num" value="template_spring">
-                                </form>	
-                            </td>
-                         </tr>
-                         <tr>
-                            <td>
-                                <img src="{{ asset('storage/image/template/summer.jpg')}}" class="img">
-                             </td>
-                            <td>
-                                <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-primary" name="num" value="template_summer">
-                                </form>	
-                            </td>
-                         </tr>
-                         <tr>
-                            <td>
-                                <img src="{{ asset('storage/image/template/autumn.jpg')}}" class="img">
-                             </td>
-                            <td>
-                                <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-primary" name="num" value="template_autumn">
-                                </form>	
-                            </td>
-                         </tr>
-                         <tr>
-                            <td>
-                                <img src="{{ asset('storage/image/template/winter.jpg')}}" class="img">
-                             </td>
-                            <td>
-                                <form action="{{ action('Admin\TemplateController@edit')}}"  method="get">   
-                                <input type="submit" class="btn btn-primary" name="num" value="template_winter">
-                                </form>
-                            </td>
-                         </tr>
+                         </tr>                         
+                         @endforeach
                          </tbody>
                  </table>
              </div>

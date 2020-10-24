@@ -45,7 +45,7 @@
                         <tbody>
                          @foreach($posts as $register)
                             <tr>
-                            <td><img class="img" src="{{ asset('storage/image/' . $register->image_path) }}"></td>
+                            <td><img class="img" src="{{ $register->image_path) }}"></td>
                             <td>{{ str_limit($register->name, 20)}}</td>
                             <th>{{ $register->birthday }}</th>
                             <th>{{ $register->anniversary }}</th>

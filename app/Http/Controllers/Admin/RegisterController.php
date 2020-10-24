@@ -7,6 +7,8 @@ use App\Register;
 
 use Illuminate\Support\Facades\Auth;
 
+use Storage;//画像の保存先をS3に変更
+
 class RegisterController extends Controller
 {
   
@@ -28,8 +30,8 @@ class RegisterController extends Controller
 
       // フォームから画像が送信されてきたら、保存して、$register->image_path に画像のパスを保存する
       if (isset($form['image'])) {
-        $path = $request->file('image')->store('public/image');
-        $register->image_path = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+        $register->image_path = Storage::disk('s3')->url($path);        
       } else {
           $register->image_path = null;
       }      
@@ -80,8 +82,8 @@ class RegisterController extends Controller
       // 送信されてきたフォームデータを格納する
       $register_form = $request->all();
       if (isset($register_form['image'])) {
-        $path = $request->file('image')->store('public/image');
-        $register->image_path = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+        $register->image_path = Storage::disk('s3')->url($path);
         unset($register_form['image']);
       } elseif (isset($request->remove)) {
         $register->image_path = null;

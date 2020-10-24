@@ -20,10 +20,10 @@
                         <div class="col-md-10">
                             <input type="hidden" class="form-control-file" name="image">
                             <div class="form-text text-info">
-                                選択中: {{ $template_form->image_path }}
-                                <input type="hidden" name="filename" value="{{ $template_form->image_path }}">
+                                選択中: {{ $img }}
+                                <input type="hidden" name="filename" value="{{ $img }}">
                             </div>
-                            <img src="{{ asset('storage/image/template/' . $template_form->image_path) }}" class="img">
+                            <img src="{{ $template_form->image_path }}" class="img">
                             <div class="form-check"></div>
                         </div>
                     </div>

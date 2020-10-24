@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
 
+use Storage;
+
 class TemplateController extends Controller{
   
   public function add()
@@ -26,8 +28,8 @@ class TemplateController extends Controller{
       
       // フォームから画像が送信されてきたら、保存して、$template->image_path に画像のパスを保存する
       if (isset($form['image'])) {
-        $path = $request->file('image')->store('public/image');
-        $template->image_path = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+        $template->image_path = Storage::disk('s3')->url($path);
       } else {
           $template->image_path = null;
       }      
@@ -42,15 +44,52 @@ class TemplateController extends Controller{
 
   public function index(Request $request)
   {
-    $cond_name = $request -> cond_name;
-    if ($cond_name != ''){
-        //検索されたら検索結果を取得する
-        $posts = Template::where('name', $cond_name)->get();
-        } else {
-        //それ以外はすべてを取得する
-        $posts = Template::all();
-        }
-     return view('admin.template.index', ['posts' => $posts, 'cond_name' => $cond_name]);
+      $templates_infos = []; //空の配列
+      
+      $info['name'] = 'template1';
+      $info['url'] = Storage::disk('s3')->url('templates/1.jpg');
+      array_push($templates_infos,$info);
+      
+      $info['name'] = 'template2';
+      $info['url'] = Storage::disk('s3')->url('templates/2.jpg');
+      array_push($templates_infos,$info);
+
+      $info['name'] = 'template3';
+      $info['url'] = Storage::disk('s3')->url('templates/3.jpg');
+      array_push($templates_infos,$info);
+      
+      $info['name'] = 'template4';
+      $info['url'] = Storage::disk('s3')->url('templates/4.jpg');
+      array_push($templates_infos,$info);
+      
+      $info['name'] = 'template5';
+      $info['url'] = Storage::disk('s3')->url('templates/5.jpg');
+      array_push($templates_infos,$info);
+      
+      $info['name'] = 'template6';
+      $info['url'] = Storage::disk('s3')->url('templates/6.jpg');
+      array_push($templates_infos,$info);
+      
+      $info['name'] = 'template_spring';
+      $info['url'] = Storage::disk('s3')->url('templates/spring.jpg');
+      array_push($templates_infos,$info);
+
+      $info['name'] = 'template_summer';
+      $info['url'] = Storage::disk('s3')->url('templates/summer.jpg');
+      array_push($templates_infos,$info);
+      
+      $info['name'] = 'template_autumn';
+      $info['url'] = Storage::disk('s3')->url('templates/autumn.jpg');
+      array_push($templates_infos,$info);
+
+      $info['name'] = 'template_winter';
+      $info['url'] = Storage::disk('s3')->url('templates/winter.jpg');
+      array_push($templates_infos,$info);
+
+      //logger('★★★★★★★');
+      //logger($templates_infos);
+
+     return view('admin.template.index', ['templates_infos' => $templates_infos]);
   }
 
   public function edit(Request $request)
@@ -58,39 +97,65 @@ class TemplateController extends Controller{
       // 画像（テンプレート）データを取得する
       $img = $_GET['num'];
       if ($img=='template1') {
-        $image='storage/image/template/1.jpg';
+        $image='templates/1.jpg';
       }elseif ($img=='template2') {
-        $image='storage/image/template/2.jpg';
+        $image='templates/2.jpg';
       }elseif ($img=='template3') {
-        $image='storage/image/template/3.jpg';
+        $image='templates/3.jpg';
       }elseif ($img=='template4') {
-        $image='storage/image/template/4.jpg';
+        $image='templates/4.jpg';
       }elseif ($img=='template5') {
-        $image='storage/image/template/5.jpg';
+        $image='templates/5.jpg';
       }elseif ($img=='template6') {
-        $image='storage/image/template/6.jpg';
+        $image='templates/6.jpg';
       }elseif ($img=='template_spring') {
-        $image='storage/image/template/spring.jpg';
+        $image='templates/spring.jpg';
       }elseif ($img=='template_summer') {
-        $image='storage/image/template/summer.jpg';
+        $image='templates/summer.jpg';
       }elseif ($img=='template_autumn') {
-        $image='storage/image/template/autumn.jpg';  
+        $image='templates/autumn.jpg';  
       }elseif ($img=='template_winter') {
-        $image='storage/image/template/winter.jpg';  
+        $image='templates/winter.jpg';  
       }
       
       $template = new Template;
       $path = $image;
-      $template->image_path = basename($path);
-      return view('admin.template.edit', ['template_form' => $template]);
+      $template -> image_path = Storage::disk('s3')->url($path);
+
+      return view('admin.template.edit', ['template_form' => $template,'img' => $img]);
   }
   
   public function card_create(Request $request)
   {
-    //画像を取得し、指定の大きさに切り取る
     $template_form = $request->all();
-    $card_img = Image::make(storage_path('app/public/image/template/'. $template_form['filename']))->crop(769, 562);
-        
+
+      $img = $template_form['filename'];
+      if ($img=='template1') {
+        $image='templates/1.jpg';
+      }elseif ($img=='template2') {
+        $image='templates/2.jpg';
+      }elseif ($img=='template3') {
+        $image='templates/3.jpg';
+      }elseif ($img=='template4') {
+        $image='templates/4.jpg';
+      }elseif ($img=='template5') {
+        $image='templates/5.jpg';
+      }elseif ($img=='template6') {
+        $image='templates/6.jpg';
+      }elseif ($img=='template_spring') {
+        $image='templates/spring.jpg';
+      }elseif ($img=='template_summer') {
+        $image='templates/summer.jpg';
+      }elseif ($img=='template_autumn') {
+        $image='templates/autumn.jpg';  
+      }elseif ($img=='template_winter') {
+        $image='templates/winter.jpg';  
+      }
+
+    $path = $image;
+    //画像を取得し、指定の大きさに切り取る
+    $card_img = Image::make(Storage::disk('s3')->url($path))->crop(769, 562);
+    
     //長めの文章を指定文字数で分割する
     $max_len = 100; //少なく設定すると変な箇所で改行されてしまうので要検討
     $lines = self::mb_wordwrap($template_form['message'], $max_len);
@@ -107,8 +172,14 @@ class TemplateController extends Controller{
     //$card_img->save(public_path('image/test14.png'));　保存先を指定する場合
     $user_id = Auth::id();
     $filename = uniqid();
-    $card_img->save(storage_path('app/public/image/'. $user_id . '/' . $filename.$template_form['filename']));
+    //$card_img->save(storage_path('app/public/image/'. $user_id . '/' . $filename.$template_form['filename']));
     
+      // バケットの`users_message_cards`フォルダへアップロード
+      $card_img = Storage::disk('s3')->putFile('users_message_cards', new File('$user_id'), 'public');
+      // アップロードした画像のフルパスを取得
+      $post->image_path = Storage::disk('s3')->url($path);
+      $post->save();
+
     return redirect('admin/card');
   }
     
