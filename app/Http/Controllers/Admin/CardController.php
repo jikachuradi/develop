@@ -7,6 +7,8 @@ use App\Card;
 
 use App\Template;
 
+use Storage;
+
 use Illuminate\Support\Facades\Auth;
 
 class CardController extends Controller
@@ -17,7 +19,7 @@ class CardController extends Controller
     return view('admin.card.create');
   }
   
-  public function create(Request $request)
+  /*public function create(Request $request)
   {
     $this->validate($request, Card::$rules);
       $card= new Card;
@@ -37,24 +39,27 @@ class CardController extends Controller
       $card->fill($form);
       $card->save();
       return redirect('admin/card/');
-  }
+  }*/
 
   public function index(Request $request)
   {
       $user_id = Auth::id();
-      $cards = glob('storage/image/'.$user_id.'/*'); //publicから抽出（配列のため（ワイルドカード））
+      //$cards = glob('storage/image/'.$user_id.'/*'); //publicから抽出（配列のため（ワイルドカード））
+      $disk = Storage::disk('s3');
+      $cards = $disk->files('users_message_cards/'.$user_id);
+      logger($cards);
       return view('admin.card.index',['cards' => $cards]);
   }
 
-  public function edit(Request $request)
-  {
+  //public function edit(Request $request)
+ // {
       // Card Modelからデータを取得する
-      $card = Card::find($request->id);
-      if (empty($card)) {
-        abort(404);    
-      }
-      return view('admin.card.edit', ['card_form' => $card]);
-  }
+      //$card = Card::find($request->id);
+      //if (empty($card)) {
+     //   abort(404);    
+     // }
+      //return view('admin.card.edit', ['card_form' => $card]);
+ //}
 
   public function update(Request $request)
   {
@@ -81,13 +86,14 @@ class CardController extends Controller
   public function delete(Request $request)
   {
       // 削除する
-      logger($request);
-      logger('/home/ec2-user/environment/develop/public/app/public/'. $request['card']);
-      $str = $request['card'];
-      $str_change = str_replace('storage', '', $str); //場所（storage）を空白（''）に入れ替え
-      $str_delete = storage_path('app/public' . $str_change);
-      logger($str_delete);
-      \File::delete($str_delete);
+      $disk = Storage::disk('s3');
+      $disk->delete($request['card']);
+    
+      //$str = $request['card'];
+      //$str_change = str_replace('storage', '', $str); //場所（storage）を空白（''）に入れ替え
+      //$str_delete = storage_path('app/public' . $str_change);
+      //\File::delete($str_delete);
+      
       return redirect('admin/card/');
   }  
 }

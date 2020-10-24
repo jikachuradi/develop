@@ -57,7 +57,7 @@
                         <a class="btn btn-primary" href="{{ route('login') }}" ><span class="fa fa-list"></span>リスト一覧</a>
                         <a class="btn btn-primary" href="{{ route('login') }}" ><span class="fa fa-square"></span>メッセージカード作成</a>
                         <a class="btn btn-primary" href="{{ route('login') }}" ><span class="fa fa-th-list"></span>メッセージカード一覧</a>
-                    <div><img src="{{ asset('storage/image/main.jpg')}}"></div><!--メイン画像-->
+                    <div><img src="{{ $main_image }}"></div><!--メイン画像-->
                 </div>
             </div>
         </div>
@@ -106,7 +106,7 @@
         <a class="btn btn-primary" href="{{url('/admin/register')}}" ><span class="fa fa-list"></span>リスト一覧</a>
         <a class="btn btn-primary" href="{{url('/admin/template')}}" ><span class="fa fa-square"></span>メッセージカード作成</a>
         <a class="btn btn-primary" href="{{url('/admin/card')}}" ><span class="fa fa-th-list"></span>メッセージカード一覧</a>
-        <div><img src="{{ asset('storage/image/main.jpg')}}"></div><!--メイン画像-->
+        <div><img src="{{ $main_image}}"></div><!--メイン画像-->
     </div>
     </div>
     @yield('content')

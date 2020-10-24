@@ -30,7 +30,7 @@ class RegisterController extends Controller
 
       // フォームから画像が送信されてきたら、保存して、$register->image_path に画像のパスを保存する
       if (isset($form['image'])) {
-        $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+        $path = Storage::disk('s3')->putFile('users_registers',$form['image'],'public');
         $register->image_path = Storage::disk('s3')->url($path);        
       } else {
           $register->image_path = null;
@@ -81,8 +81,9 @@ class RegisterController extends Controller
       $register = Register::find($request->id);
       // 送信されてきたフォームデータを格納する
       $register_form = $request->all();
+      $form = $request->all();
       if (isset($register_form['image'])) {
-        $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+        $path = Storage::disk('s3')->putFile('users_registers',$form['image'],'public');
         $register->image_path = Storage::disk('s3')->url($path);
         unset($register_form['image']);
       } elseif (isset($request->remove)) {

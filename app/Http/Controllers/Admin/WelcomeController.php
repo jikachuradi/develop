@@ -9,6 +9,8 @@ use App\Register;//RegisterModel使用
 
 use Illuminate\Support\Facades\Auth;//ユーザーAuthで取得
 
+use Storage;
+
 class WelcomeController extends Controller
 {
   public function notice(Request $request)//通知
@@ -34,6 +36,8 @@ class WelcomeController extends Controller
         $listDatas = null ;
       }
       
-    return view('/welcome',['today' => $today,'name' => $namesArray,'anniversaryName' =>$anniversaryArray]);
+      $main_image = Storage::disk('s3')->url('subjects/'.'main.jpg');
+      
+    return view('/welcome',['today' => $today,'name' => $namesArray,'anniversaryName' =>$anniversaryArray,'main_image' => $main_image]);
   }
 }

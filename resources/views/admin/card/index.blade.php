@@ -36,7 +36,7 @@
                     <tbody>
                     @foreach($cards as $card)
                         <tr>
-                        <td><img src="{{ asset($card)}}" class="img"></td>
+                        <td><img src="{{ Storage::disk('s3')->url($card) }}" class="img"></td>
                         <td>
                         <div>
                             <a href="{{ action('Admin\CardController@delete',['card' => $card])}}">削除</a>

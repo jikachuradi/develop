@@ -15,7 +15,7 @@
                         @endforeach
                     </ul>
                 @endif
-                <img class="img" src="{{ asset('storage/image/' . $register_form->image_path) }}">
+                <img class="img" src="{{ $register_form->image_path }}">
                 
                 <div class="form-group row">
                     <label class="col-md-2" for="name">名前</label>
@@ -72,7 +72,6 @@
                     <div class="col-md-10">
                         <input type="file" class="form-control-file" name="image">
                             <div class="form-text text-info">
-                                設定中: {{ $register_form->image_path }}
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">

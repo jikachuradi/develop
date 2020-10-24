@@ -168,17 +168,15 @@ class TemplateController extends Controller{
       $font->color('#000000');
     });
 
-    //storageに保存する
-    //$card_img->save(public_path('image/test14.png'));　保存先を指定する場合
     $user_id = Auth::id();
     $filename = uniqid();
     //$card_img->save(storage_path('app/public/image/'. $user_id . '/' . $filename.$template_form['filename']));
-    
-      // バケットの`users_message_cards`フォルダへアップロード
-      $card_img = Storage::disk('s3')->putFile('users_message_cards', new File('$user_id'), 'public');
-      // アップロードした画像のフルパスを取得
-      $post->image_path = Storage::disk('s3')->url($path);
-      $post->save();
+
+    // バケットの`users_message_cards`フォルダへアップロード
+    $card_path = Storage::disk('s3')->put('users_message_cards/'. $user_id . '/' . $filename.$template_form['filename'], $card_img->stream());
+
+    // アップロードした画像のフルパスを取得
+    //$path->image_path = Storage::disk('s3')->url($card_path);
 
     return redirect('admin/card');
   }
