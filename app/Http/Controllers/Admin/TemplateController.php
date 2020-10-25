@@ -66,10 +66,6 @@ class TemplateController extends Controller{
       $info['url'] = Storage::disk('s3')->url('templates/5.jpg');
       array_push($templates_infos,$info);
       
-      $info['name'] = 'template6';
-      $info['url'] = Storage::disk('s3')->url('templates/6.jpg');
-      array_push($templates_infos,$info);
-      
       $info['name'] = 'template_spring';
       $info['url'] = Storage::disk('s3')->url('templates/spring.jpg');
       array_push($templates_infos,$info);
@@ -106,8 +102,6 @@ class TemplateController extends Controller{
         $image='templates/4.jpg';
       }elseif ($img=='template5') {
         $image='templates/5.jpg';
-      }elseif ($img=='template6') {
-        $image='templates/6.jpg';
       }elseif ($img=='template_spring') {
         $image='templates/spring.jpg';
       }elseif ($img=='template_summer') {
@@ -140,8 +134,6 @@ class TemplateController extends Controller{
         $image='templates/4.jpg';
       }elseif ($img=='template5') {
         $image='templates/5.jpg';
-      }elseif ($img=='template6') {
-        $image='templates/6.jpg';
       }elseif ($img=='template_spring') {
         $image='templates/spring.jpg';
       }elseif ($img=='template_summer') {
@@ -173,7 +165,7 @@ class TemplateController extends Controller{
     //$card_img->save(storage_path('app/public/image/'. $user_id . '/' . $filename.$template_form['filename']));
 
     // バケットの`users_message_cards`フォルダへアップロード
-    $card_path = Storage::disk('s3')->put('users_message_cards/'. $user_id . '/' . $filename.$template_form['filename'], $card_img->stream());
+    $card_path = Storage::disk('s3')->put('users_message_cards/'. $user_id . '/' . $filename.$template_form['filename'], $card_img->stream(),'public');
 
     // アップロードした画像のフルパスを取得
     //$path->image_path = Storage::disk('s3')->url($card_path);
